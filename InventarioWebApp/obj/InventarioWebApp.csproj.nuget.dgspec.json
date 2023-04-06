@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\TrabajoSusana\\Sistema_Inventario\\InventarioWebApp\\InventarioWebApp.csproj": {}
+    "C:\\webAppInventario\\bloa\\Sistema_Inventario\\InventarioWebApp\\InventarioWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\TrabajoSusana\\Sistema_Inventario\\InventarioWebApp\\InventarioWebApp.csproj": {
+    "C:\\webAppInventario\\bloa\\Sistema_Inventario\\InventarioWebApp\\InventarioWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\TrabajoSusana\\Sistema_Inventario\\InventarioWebApp\\InventarioWebApp.csproj",
+        "projectUniqueName": "C:\\webAppInventario\\bloa\\Sistema_Inventario\\InventarioWebApp\\InventarioWebApp.csproj",
         "projectName": "InventarioWebApp",
-        "projectPath": "C:\\Users\\User\\Documents\\TrabajoSusana\\Sistema_Inventario\\InventarioWebApp\\InventarioWebApp.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\TrabajoSusana\\Sistema_Inventario\\InventarioWebApp\\obj\\",
+        "projectPath": "C:\\webAppInventario\\bloa\\Sistema_Inventario\\InventarioWebApp\\InventarioWebApp.csproj",
+        "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+        "outputPath": "C:\\webAppInventario\\bloa\\Sistema_Inventario\\InventarioWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,8 +45,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
         }
       }
     }

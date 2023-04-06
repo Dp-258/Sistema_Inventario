@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TNBQ/vpFlf7TPalcFTSVMhteQAfvs/PPDuURsI7JwEVg59gXrB43Hr1VMKEt6neBGxNT4afGTUvnop5LJ1eb5Q==",
+  "dgSpecHash": "D1wNccTQzJoEuYTYxFi8/ZLKeGQ0sEyqEMD8bUgXTEcB1twY/LzzA02RX66IuZK/rUQv27YQQQ1wZ1EC7QzjoA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Documents\\TrabajoSusana\\Sistema_Inventario\\InventarioWebApp\\InventarioWebApp.csproj",
+  "projectFilePath": "C:\\webAppInventario\\bloa\\Sistema_Inventario\\InventarioWebApp\\InventarioWebApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
