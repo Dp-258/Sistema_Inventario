@@ -157,3 +157,4 @@ C:\MVC_inventario\Sistema_Inventario\MVCInventario\obj\Debug\netcoreapp3.1\Razor
 C:\MVC_inventario\Sistema_Inventario\MVCInventario\obj\Debug\netcoreapp3.1\Razor\Views\PROVEEDOR\Details.cshtml.g.cs
 C:\MVC_inventario\Sistema_Inventario\MVCInventario\obj\Debug\netcoreapp3.1\Razor\Views\PROVEEDOR\Edit.cshtml.g.cs
 C:\MVC_inventario\Sistema_Inventario\MVCInventario\obj\Debug\netcoreapp3.1\Razor\Views\PROVEEDOR\Index.cshtml.g.cs
+C:\MVC_inventario\Sistema_Inventario\MVCInventario\obj\Debug\netcoreapp3.1\MVCInventario.csproj.AssemblyReference.cache
