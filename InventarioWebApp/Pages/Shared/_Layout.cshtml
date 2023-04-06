@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="~/css/estilos.css">
 </head>
 <body style="background-color:black">
+    
     <header>
+        
         <div>
-            <button class="hamburger-button">
+            <button class="hamburger-button" id="boton-nav" >
                 <span class="hamburger-icon"></span>
             </button>
         </div>
@@ -25,11 +27,18 @@
             </ul>
         </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+<br />
+    <br />
+    <div class="mover">
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     </div>
+   
+
+   
 
 
     <script src="~/js/script.js"></script> <!-- Enlace al archivo JavaScript -->

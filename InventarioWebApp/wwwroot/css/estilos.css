@@ -3,16 +3,19 @@
   
   /* Estilos para el menú lateral */
 .sidebar {
-  background-color: rgb(119, 119, 119);
-  width: 200px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  padding-top: 2px;
+    background-color: rgb(119, 119, 119);
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 2px;
+    right: 0;
 }
-
+.sidebar-visible {
+    margin-left: 200px;
+}
 /* Estilos para el menú principal */
 .menu {
   list-style-type: none;
@@ -107,6 +110,6 @@
 
 .sidebar--hidden {
   transform: translateX(-200px);
-  transition: transform 0.3s ease-out;
+  transition: transform 0.0s ease-out;
 }
 
