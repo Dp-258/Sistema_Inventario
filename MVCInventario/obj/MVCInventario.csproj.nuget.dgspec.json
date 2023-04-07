@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {}
+    "C:\\InventarioMVC\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {}
   },
   "projects": {
-    "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {
+    "C:\\InventarioMVC\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+        "projectUniqueName": "C:\\InventarioMVC\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
         "projectName": "MVCInventario",
-        "projectPath": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
-        "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-        "outputPath": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\obj\\",
+        "projectPath": "C:\\InventarioMVC\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+        "packagesPath": "C:\\Users\\ramol\\.nuget\\packages\\",
+        "outputPath": "C:\\InventarioMVC\\Sistema_Inventario\\MVCInventario\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ramol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -73,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
