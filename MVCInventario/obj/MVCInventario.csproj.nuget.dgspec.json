@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {}
+    "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {}
   },
   "projects": {
-    "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {
+    "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+        "projectUniqueName": "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
         "projectName": "MVCInventario",
-        "projectPath": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+        "projectPath": "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
         "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-        "outputPath": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\obj\\",
+        "outputPath": "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",

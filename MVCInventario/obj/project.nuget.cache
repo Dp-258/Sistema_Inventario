@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Amu5Gm53qSZEzyVnuBATeWC5Ly6Hhv7A9LBT+Byumpk635gDrp74kAKS9MUg2CqDq43ODpeoL9eQL+M1r/rZdQ==",
+  "dgSpecHash": "grPJiC5PzJGJo6hHckPbar7qxh0+9jZNhmHnu2bPf+rggKPnBlsTEGnU7p+/azXOXKfJ9Kk7MnrpwTmQwX425Q==",
   "success": true,
-  "projectFilePath": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+  "projectFilePath": "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Daniel\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Daniel\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

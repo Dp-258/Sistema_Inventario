@@ -17,5 +17,7 @@ namespace MVCInventario.Data
         public DbSet<MVCInventario.Models.CLIENTE> CLIENTE { get; set; }
 
         public DbSet<MVCInventario.Models.PROVEEDOR> PROVEEDOR { get; set; }
+
+        public DbSet<MVCInventario.Models.USUARIO> USUARIO { get; set; }
     }
 }
