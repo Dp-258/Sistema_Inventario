@@ -210,3 +210,49 @@ table {
     margin: 0;
     padding: 0;
 }
+
+.hexagon {
+    width: 200px;
+    height: 200px;
+    background-color: #cdd0d1;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 82px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .hexagon:hover {
+        background-color: #dce1e3;
+    }
+
+.inner-hexagon {
+    width: 198px;
+    height: 198px;
+    background-color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 37.5px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: #cdd0d1;
+}
+
+.top-row {
+    text-align: center;
+}
+
+.bottom-row {
+    text-align: center;
+    margin-top: 82px;
+}
+
+.hexagon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
