@@ -1,0 +1,48 @@
+﻿@model MVCInventario.Models.PROVEEDOR
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PROVEEDOR</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CEDULAPROVEEDOR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CEDULAPROVEEDOR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NOMBREPROVEEDOR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NOMBREPROVEEDOR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DIRECCIONPROVEEDOR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DIRECCIONPROVEEDOR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CORREOPROVEEDOR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CORREOPROVEEDOR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CIUDADPROVEEDOR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CIUDADPROVEEDOR)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

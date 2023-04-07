@@ -1,0 +1,51 @@
+﻿@model MVCInventario.Models.PROVEEDOR
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PROVEEDOR</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CEDULAPROVEEDOR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CEDULAPROVEEDOR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NOMBREPROVEEDOR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NOMBREPROVEEDOR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DIRECCIONPROVEEDOR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DIRECCIONPROVEEDOR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CORREOPROVEEDOR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CORREOPROVEEDOR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CIUDADPROVEEDOR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CIUDADPROVEEDOR)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
