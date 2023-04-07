@@ -55,7 +55,7 @@ namespace MVCInventario
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=USUARIO}/{action=Index}/{id?}");
             });
         }
     }
