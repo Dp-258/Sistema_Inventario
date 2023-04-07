@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {}
+    "D:\\DesarrolloAPP - copia\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {
+    "D:\\DesarrolloAPP - copia\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+        "projectUniqueName": "D:\\DesarrolloAPP - copia\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
         "projectName": "MVCInventario",
-        "projectPath": "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
-        "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Daniel\\Downloads\\Sistema_Inventario\\MVCInventario\\obj\\",
+        "projectPath": "D:\\DesarrolloAPP - copia\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+        "packagesPath": "C:\\Users\\Jhoel\\.nuget\\packages\\",
+        "outputPath": "D:\\DesarrolloAPP - copia\\Sistema_Inventario\\MVCInventario\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jhoel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -73,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
