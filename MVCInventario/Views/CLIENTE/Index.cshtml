@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MVCInventario.Models.CLIENTE>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/estilos.css">
+</head>
+
+<h1>CLIENTES</h1>
+
+<div class="hexagon hexagon-create">
+    <a asp-action="Create">Crear</a>
+</div>
+<div class="search-container">
+    <label for="search-input">Buscar:</label>
+    <input type="text" id="search-input" placeholder="Ingresa tu búsqueda">
+    <button type="button" id="search-button">Buscar</button>
+</div>
+<br />
+<div class="contenedortable">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CEDULACLIENTE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NOMBRECLIENTE)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CEDULACLIENTE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRECLIENTE)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap');
+
+  
+  /* Estilos para el menú lateral */
+.sidebar {
+    background-color: rgb(119, 119, 119);
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 2px;
+    right: 0;
+}
+.sidebar-visible {
+    margin-left: 200px;
+}
+/* Estilos para el menú principal */
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 8px 16px;
+  border-bottom: 1px solid #000000;
+}
+
+.menu li a {
+  font-weight: bold;
+  font-family: 'Titillium Web', sans-serif;
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Estilos para el menú desplegable */
+.submenu {
+  display: none;
+}
+
+.menu li:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 8px 16px;
+}
+
+.submenu li a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Estilos para el boton hamburguesa */
+
+/* Estilos para ocultar la barra de navegación cuando se hace clic en el botón hamburguesa */
+/* Estilos para el botón hamburguesa */
+.hamburger-button {
+  display: block;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Agregar margen superior al menú */
+.sidebar {
+  margin-top: 50px; 
+}
+
+/* Agregar margen superior al botón hamburguesa */
+.hamburger-button {
+  margin-top: 5px;
+}
+
+
+/* Estilos para el icono hamburguesa */
+.hamburger-icon {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: 5px;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+}
+
+.hamburger-icon:before {
+  transform: translateY(-8px);
+}
+
+.hamburger-icon:after {
+  transform: translateY(5px);
+}
+
+
+.sidebar--hidden {
+  transform: translateX(-200px);
+  transition: transform 0.0s ease-out;
+}
+
+/*Interfaz de clientes*/
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.hexagon {
+    width: 120px;
+    height: 70px;
+    background-color: #ffcc00;
+    position: relative;
+    margin: 0 20px;
+    transition: all 0.3s ease;
+}
+
+    .hexagon:before,
+    .hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+    }
+
+    .hexagon:before {
+        bottom: 100%;
+        border-bottom: 35px solid #ffcc00;
+    }
+
+    .hexagon:after {
+        top: 100%;
+        width: 0;
+        border-top: 35px solid #ffcc00;
+    }
+
+    .hexagon:hover {
+        background-color: #ffdd55;
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    .hexagon a {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        z-index: 1;
+    }
+
+.hexagon-create {
+    position: absolute;
+    top: 100px;
+    left: 150px;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+    .search-container label {
+        margin-right: 10px;
+    }
+
+    .search-container input[type="text"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .search-container button {
+        padding: 5px 10px;
+        background-color: #ffcc00;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+table {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.contenedortable {
+    margin: 0;
+    padding: 0;
+}
