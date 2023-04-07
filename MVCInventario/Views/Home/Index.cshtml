@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/estiloHome.css">
+
+<script>
+    var elemento = document.getElementById("header_nav");
+    elemento.remove();
+</script>
+<div class="encabezado-titulo" style="align-items:center;">
+    <h1>Sistema de Inventario</h1>
+</div>
+<div class="mover">
+    <!-- cambio lugar -->
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="top-row">
+
+        <a asp-area="" asp-controller="#" asp-action="Index" class="hexagon"><i class="fa-solid fa-arrow-down-long fa-5x" style="color: #000000;"></i>ENTRADAS</a>
+        <a asp-area="" asp-controller="#" asp-action="Index" class="hexagon"><i class="fa-solid fa-cart-flatbed fa-5x" style="color: #000000;"></i>INVENTARIO</a>
+        <a asp-area="" asp-controller="#" asp-action="Index" class="hexagon"><i class="fa-solid fa-arrow-up fa-5x" style="color: #000000;"></i>SALIDAS</a>
+    </div>
+    <div class="bottom-row">
+        <a asp-area="" asp-controller="CLIENTE" asp-action="Index" class="hexagon"><i class="fa-solid fa-user fa-5x" style="color: #000000;"></i>CLIENTES</a>
+        <a asp-area="" asp-controller="#" asp-action="Index" class="hexagon"><i class="fa-solid fa-boxes-stacked fa-5x" style="color: #000000;"></i>PRODUCTOS</a>
+        <a asp-area="" asp-controller="PROVEEDOR" asp-action="Index" class="hexagon"><i class="fa-solid fa-truck-fast fa-5x" style="color: #000000;"></i>PROVEEDORES</a>
+    </div>
+</div>

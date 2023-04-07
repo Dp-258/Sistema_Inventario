@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap');
+
+  
+  /* Estilos para el menú lateral */
+.sidebar {
+    background-color: rgb(119, 119, 119);
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 2px;
+    right: 0;
+}
+.sidebar-visible {
+    margin-left: 200px;
+}
+/* Estilos para el menú principal */
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 8px 16px;
+  border-bottom: 1px solid #000000;
+}
+
+.menu li a {
+  font-weight: bold;
+  font-family: 'Titillium Web', sans-serif;
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Estilos para el menú desplegable */
+.submenu {
+  display: none;
+}
+
+.menu li:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 8px 16px;
+}
+
+.submenu li a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Estilos para el boton hamburguesa */
+
+/* Estilos para ocultar la barra de navegación cuando se hace clic en el botón hamburguesa */
+/* Estilos para el botón hamburguesa */
+.hamburger-button {
+  display: block;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Agregar margen superior al menú */
+.sidebar {
+  margin-top: 50px; 
+}
+
+/* Agregar margen superior al botón hamburguesa */
+.hamburger-button {
+  margin-top: 5px;
+}
+
+
+/* Estilos para el icono hamburguesa */
+.hamburger-icon {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin-bottom: 5px;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+}
+
+.hamburger-icon:before {
+  transform: translateY(-8px);
+}
+
+.hamburger-icon:after {
+  transform: translateY(5px);
+}
+
+
+.sidebar--hidden {
+  transform: translateX(-200px);
+  transition: transform 0.0s ease-out;
+}
+
+/*Botones de la ventana de inicio*/
+.hexagon {
+    width: 200px;
+    height: 200px;
+    /*cambio color*/
+    background-color: #cdd0d1;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 82px;
+    /*cambio color*/
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+/*color*/
+    .hexagon:hover {
+        background-color: #d3edf5;
+    }
+
+.top-row { 
+    text-align: center;
+}
+/*cambio margin-top*/
+.bottom-row {
+    text-align: center;
+    margin-top: 52px;
+}
+
+.hexagon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
