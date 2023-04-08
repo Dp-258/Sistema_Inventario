@@ -11,5 +11,7 @@ namespace MVCInventario.Models
         //Lista de clientes
         public List<CLIENTE> Clientes { get; set; }
         public string CedString { get; set; }
+        public string NomString { get; set; }
+
     }
 }

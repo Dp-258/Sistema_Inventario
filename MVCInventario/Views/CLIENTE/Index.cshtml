@@ -1,36 +1,40 @@
-﻿@model IEnumerable<MVCInventario.Models.CLIENTE>
+﻿@model MVCInventario.Models.ClienteViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Clientes -";
 }
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Clientes.css">
 </head>
 
-<h1 style="color:black; font-size: 4em; text-align:center">CLIENTES</h1>
+<h1 class="titulo separacion" style="color:black; text-align:center">CLIENTES</h1>
+<div class="text-center separacion">
 <a asp-action="Create" style="color:black" class="hexagoncli">Crear <i class="fa-solid fa-user fa-4x" style="color: #000000;"></i></a>
-<div class="search-container">
-    <label for="search-input" style="color: black; font-size:1.5em;">Buscar:</label>
-    <input type="text" id="search-input" placeholder="Ingresa tu búsqueda">
-    <button type="button" id="search-button" style="margin-left: 20px; background-color: #cdd0d1">Buscar</button>
 </div>
+<form>
+    <div class="search-container">
+        <label for="search-input" style="color: black; font-size:1.5em;">Buscar:</label>
+        <input type="text" asp-for="CedString" id="search-input" placeholder="Ingresa tu búsqueda">
+        <input class="bg-primary text-white" style="margin-left: 20px; background-color: #cdd0d1" type="submit" value="Buscar" />
+    </div>
+</form>
 <br />
-<div class="contenedortable">
+<div class="contenedortable separacion">
     <table class="table" style="color:black">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CEDULACLIENTE)
+                    @Html.DisplayNameFor(model => model.Clientes[0].CEDULACLIENTE)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.NOMBRECLIENTE)
+                    @Html.DisplayNameFor(model => model.Clientes[0].NOMBRECLIENTE)
                 </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.Clientes)
             {
                 <tr>
                     <td>
@@ -40,9 +44,9 @@
                         @Html.DisplayFor(modelItem => item.NOMBRECLIENTE)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalle</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
                     </td>
                 </tr>
             }

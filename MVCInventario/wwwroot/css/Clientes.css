@@ -95,9 +95,16 @@
     .table tbody td:hover {
         background-color: rgba(0, 0, 0, 0.3);
     }
+/*Creación clientes*/
+.listado{
+    font-size:1.2rem;
+}
 
 
 @media screen and (max-width: 600px) {
+    .titulo{
+        font-size:40px;
+    }
     .table {
         border: 0px;
     }
@@ -136,4 +143,17 @@
                 text-transform: uppercase;
                 float: left;
             }
+}
+
+/*Creación clientes*/
+@media (max-width: 550px) {
+    .separacion {
+        margin-left: 1.4em;
+    }
+}
+
+@media (max-width: 380px) {
+    .separacion {
+        margin-left: 1.4em;
+    }
 }

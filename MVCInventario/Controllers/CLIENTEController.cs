@@ -20,9 +20,25 @@ namespace MVCInventario.Controllers
         }
 
         // GET: CLIENTE
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(ClienteViewModel modelo)
         {
-            return View(await _context.CLIENTE.ToListAsync());
+            //Obtener la lista de Clientes
+            var Clientes = _context.CLIENTE.Select(p => p);
+
+            //Buqueda CEDULA de cliente
+            if (!String.IsNullOrEmpty(modelo.CedString))
+            {
+                Clientes = Clientes.Where(p => p.CEDULACLIENTE.Contains(modelo.CedString));
+            }
+
+            //Buqueda Nombre de cliente
+            if (!String.IsNullOrEmpty(modelo.NomString))
+            {
+                Clientes = Clientes.Where(p => p.NOMBRECLIENTE.Contains(modelo.NomString));
+            }
+
+            modelo.Clientes = await Clientes.ToListAsync();
+            return View(modelo);
         }
 
         // GET: CLIENTE/Details/5
