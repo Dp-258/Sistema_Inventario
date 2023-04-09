@@ -6,18 +6,26 @@
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Clientes.css">
+    <script src="~/js/opcionesSelectCliente.js"></script>
 </head>
 
 <h1 class="titulo separacion" style="color:black; text-align:center">CLIENTES</h1>
 <div class="text-center separacion">
-<a asp-action="Create" style="color:black" class="hexagoncli">Crear <i class="fa-solid fa-user fa-4x" style="color: #000000;"></i></a>
+    <a asp-action="Create" style="color:black" class="hexagoncli">Crear <i class="fa-solid fa-user fa-4x" style="color: #000000;"></i></a>
 </div>
 <form>
     <div class="search-container">
-        <label for="search-input" style="color: black; font-size:1.5em;">Buscar:</label>
-        <input type="text" asp-for="CedString" id="search-input" placeholder="Ingresa tu búsqueda">
-        <input class="bg-primary text-white" style="margin-left: 20px; background-color: #cdd0d1" type="submit" value="Buscar" />
+        <label for="search-input" style="color: black; font-size:1.5em;">Buscar por</label>
+        <select class="form-select" id="selectCliente" style="margin-right:15px">
+            <option value="1" selected disabled>Seleccione una opción</option>
+            <option value="1">Cédula</option>
+            <option value="2">Nombre</option>
+        </select>
+        <div id="opcionCliente">
+        </div>
+        <input id="btnBuscar" class="bg-primary text-white" style="margin-left: 20px; background-color: #cdd0d1" type="submit" value="Buscar Todos" />
     </div>
+
 </form>
 <br />
 <div class="contenedortable separacion">
@@ -53,3 +61,4 @@
         </tbody>
     </table>
 </div>
+<script src="~/js/opcionesSelectCliente.js"></script>
