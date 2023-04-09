@@ -1,59 +1,84 @@
-﻿@model IEnumerable<MVCInventario.Models.PROVEEDOR>
+﻿@model MVCInventario.Models.ProveedorViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Proveedores -";
 }
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Proveedores.css">
+    <script src="~/js/opcionesSelectProveedor.js"></script>
+</head>
 
-<h1>Index</h1>
+<h1 class="titulo separacionpro" style="color:black; text-align:center">PROVEEDORES</h1>
+<div class="text-center separacionpro">
+    <a asp-action="Create" style="color:black" class="hexagonpro">Crear <i class="fa-solid fa-user fa-4x" style="color: #000000;"></i></a>
+</div>
+<form>
+    <div class="search-container-pro">
+        <label for="search-input" style="color: black; font-size:1.5em;">Buscar por</label>
+        <select class="form-select" id="selectProveedor" style="margin-right:15px">
+            <option value="1" selected disabled>Seleccione una opción</option>
+            <option value="1">Cédula</option>
+            <option value="2">Nombre</option>
+            <option value="3">Dirección</option>
+            <option value="4">Email</option>
+            <option value="5">Ciudad</option>
+        </select>
+        <div id="opcionProveedor">
+        </div>
+        <input id="btnBuscarPro" class="bg-primary text-white" style="margin-left: 20px; background-color: #cdd0d1" type="submit" value="Buscar Todos" />
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CEDULAPROVEEDOR)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NOMBREPROVEEDOR)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DIRECCIONPROVEEDOR)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CORREOPROVEEDOR)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CIUDADPROVEEDOR)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CEDULAPROVEEDOR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NOMBREPROVEEDOR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DIRECCIONPROVEEDOR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CORREOPROVEEDOR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CIUDADPROVEEDOR)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+</form>
+<br />
+<div class="contenedortablepro separacion">
+    <table class="tablepro">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Proveedores[0].CEDULAPROVEEDOR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Proveedores[0].NOMBREPROVEEDOR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Proveedores[0].DIRECCIONPROVEEDOR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Proveedores[0].CORREOPROVEEDOR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Proveedores[0].CIUDADPROVEEDOR)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model.Proveedores) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CEDULAPROVEEDOR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOMBREPROVEEDOR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIRECCIONPROVEEDOR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CORREOPROVEEDOR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CIUDADPROVEEDOR)
+                </td>
+                <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalle</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
+<script src="~/js/opcionesSelectProveedor.js"></script>

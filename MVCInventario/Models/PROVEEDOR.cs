@@ -24,7 +24,7 @@ namespace MVCInventario.Models
         public string NOMBREPROVEEDOR { get; set; }
         [Display(Name = "Dirección")]
         [StringLength(250, MinimumLength = 10, ErrorMessage = "Por favor, detalle un poco más la dirección")]
-        [Required]
+        [Required(ErrorMessage = "Es necesario ingresar una dirección")]
         public string DIRECCIONPROVEEDOR { get; set; }
         [Display(Name = "Email")]
         [StringLength(80, MinimumLength = 10, ErrorMessage = "Ingrese un correo válido")]
@@ -32,6 +32,8 @@ namespace MVCInventario.Models
         public string CORREOPROVEEDOR { get; set; }
         [Display(Name = "Ciudad")]
         [StringLength(250, MinimumLength = 3, ErrorMessage = "Por favor, ingrese una ciudad válida")]
+        [Required(ErrorMessage = "Es necesario ingresar la ciudad del proveedor")]
         public string CIUDADPROVEEDOR { get; set; }
+
     }
 }

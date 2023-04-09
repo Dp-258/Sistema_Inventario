@@ -1,15 +1,20 @@
 ﻿@model MVCInventario.Models.PROVEEDOR
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalle Proveedor -";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>PROVEEDOR</h4>
-    <hr />
-    <dl class="row">
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Proveedores.css">
+</head>
+<h1 style="color:black; text-align:center" class="separacion">Detalles del proveedor</h1>
+<hr />
+<br />
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 bg-light border rounded text-center">
+    <dl class="row listadopro">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CEDULAPROVEEDOR)
         </dt>
@@ -41,8 +46,11 @@
             @Html.DisplayFor(model => model.CIUDADPROVEEDOR)
         </dd>
     </dl>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+        <a asp-action="Index">Volver a la lista</a>
+    </div>
+    <br />
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>
+

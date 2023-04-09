@@ -1,51 +1,54 @@
 ﻿@model MVCInventario.Models.PROVEEDOR
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear Proveedor -";
 }
-
-<h1>Create</h1>
-
-<h4>PROVEEDOR</h4>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Proveedores.css">
+</head>
+<h1 style="color:black; text-align:center" class="separacionpro">Ingrese los datos del proveedor</h1>
 <hr />
+<br />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CEDULAPROVEEDOR" class="control-label"></label>
-                <input asp-for="CEDULAPROVEEDOR" class="form-control" />
-                <span asp-validation-for="CEDULAPROVEEDOR" class="text-danger"></span>
+    <div class="col-md-3"></div>
+         <div class="col-md-6 bg-light border rounded">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="CEDULAPROVEEDOR" class="control-label"></label>
+                    <input asp-for="CEDULAPROVEEDOR" class="form-control" />
+                    <span asp-validation-for="CEDULAPROVEEDOR" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NOMBREPROVEEDOR" class="control-label">Nombre completo</label>
+                    <input asp-for="NOMBREPROVEEDOR" class="form-control" />
+                    <span asp-validation-for="NOMBREPROVEEDOR" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DIRECCIONPROVEEDOR" class="control-label"></label>
+                    <input asp-for="DIRECCIONPROVEEDOR" class="form-control" />
+                    <span asp-validation-for="DIRECCIONPROVEEDOR" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CORREOPROVEEDOR" class="control-label"></label>
+                    <input asp-for="CORREOPROVEEDOR" class="form-control" />
+                    <span asp-validation-for="CORREOPROVEEDOR" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CIUDADPROVEEDOR" class="control-label"></label>
+                    <input asp-for="CIUDADPROVEEDOR" class="form-control" />
+                    <span asp-validation-for="CIUDADPROVEEDOR" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" value="Crear" class="btn btn-primary w-50" />
+                </div>
+            </form>
+            <div>
+                <a asp-action="Index">Volver al listado</a>
             </div>
-            <div class="form-group">
-                <label asp-for="NOMBREPROVEEDOR" class="control-label"></label>
-                <input asp-for="NOMBREPROVEEDOR" class="form-control" />
-                <span asp-validation-for="NOMBREPROVEEDOR" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DIRECCIONPROVEEDOR" class="control-label"></label>
-                <input asp-for="DIRECCIONPROVEEDOR" class="form-control" />
-                <span asp-validation-for="DIRECCIONPROVEEDOR" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CORREOPROVEEDOR" class="control-label"></label>
-                <input asp-for="CORREOPROVEEDOR" class="form-control" />
-                <span asp-validation-for="CORREOPROVEEDOR" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CIUDADPROVEEDOR" class="control-label"></label>
-                <input asp-for="CIUDADPROVEEDOR" class="form-control" />
-                <span asp-validation-for="CIUDADPROVEEDOR" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

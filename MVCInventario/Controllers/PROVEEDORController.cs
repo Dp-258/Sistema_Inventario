@@ -20,9 +20,43 @@ namespace MVCInventario.Controllers
         }
 
         // GET: PROVEEDOR
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(ProveedorViewModel modelo)
         {
-            return View(await _context.PROVEEDOR.ToListAsync());
+            //Obtener la lista de Proveedores
+            var Proveedores = _context.PROVEEDOR.Select(p => p);
+
+            //Buqueda CEDULA de Proveedor
+            if (!String.IsNullOrEmpty(modelo.CedString))
+            {
+                Proveedores = Proveedores.Where(p => p.CEDULAPROVEEDOR.Contains(modelo.CedString));
+            }
+
+            //Buqueda Nombre de Proveedor
+            if (!String.IsNullOrEmpty(modelo.NomString))
+            {
+                Proveedores = Proveedores.Where(p => p.NOMBREPROVEEDOR.Contains(modelo.NomString));
+            }
+
+            //Buqueda Direccion de Proveedor
+            if (!String.IsNullOrEmpty(modelo.DirString))
+            {
+                Proveedores = Proveedores.Where(p => p.DIRECCIONPROVEEDOR.Contains(modelo.DirString));
+            }
+
+            //Buqueda Email de Proveedor
+            if (!String.IsNullOrEmpty(modelo.EmailString))
+            {
+                Proveedores = Proveedores.Where(p => p.CORREOPROVEEDOR.Contains(modelo.EmailString));
+            }
+
+            //Buqueda Ciudad de Proveedor
+            if (!String.IsNullOrEmpty(modelo.CiuString))
+            {
+                Proveedores = Proveedores.Where(p => p.CIUDADPROVEEDOR.Contains(modelo.CiuString));
+            }
+
+            modelo.Proveedores = await Proveedores.ToListAsync();
+            return View(modelo);
         }
 
         // GET: PROVEEDOR/Details/5

@@ -1,0 +1,159 @@
+﻿.hexagonpro {
+    width: 150px;
+    height: 150px;
+    background-color: #cdd0d1;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 82px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .hexagonpro:hover {
+        background-color: #dce1e3;
+    }
+
+    .hexagonpro i {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+.search-container-pro{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left:55px;
+}
+
+    .search-container-pro label {
+        margin-right: 10px;
+    }
+
+    .search-container-pro input[type="text"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .search-container-pro button {
+        padding: 5px 10px;
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+.contenedortablepro {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.tablepro {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+}
+
+    .tablepro caption {
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 8px 0px;
+    }
+
+    .tablepro tr {
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+    }
+
+    .tablepro th, .table td {
+        font-size: 16px;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .tablepro thead th {
+        text-transform: uppercase;
+        background-color: #ddd;
+    }
+
+    .tablepro tbody tr:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .tablepro tbody td:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+/*Creación Proveedores*/
+.listadopro{
+    font-size:1.2rem;
+}
+
+
+@media screen and (max-width: 600px) {
+    .titulopro{
+        font-size:40px;
+    }
+    .tablepro {
+        border: 0px;
+    }
+
+        .tablepro caption {
+            font-size: 22px;
+        }
+
+        .tablepro thead {
+            display: none;
+        }
+
+        .tablepro tr {
+            margin-bottom: 8px;
+            border-bottom: 4px solid #ddd;
+            display: block;
+        }
+
+        .tablepro th, .table td {
+            font-size: 12px;
+        }
+
+        .tablepro td {
+            display: block;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+            .tablepro td:last-child {
+                border-bottom: 0px;
+            }
+
+            .tablepro td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                text-transform: uppercase;
+                float: left;
+            }
+}
+
+/*Creación Proveedores*/
+@media (max-width: 550px) {
+    .separacionpro {
+        margin-left: 1.4em;
+    }
+}
+
+@media (max-width: 380px) {
+    .separacionpro {
+        margin-left: 1.4em;
+    }
+}
