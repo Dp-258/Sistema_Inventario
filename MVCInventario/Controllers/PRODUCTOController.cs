@@ -23,31 +23,16 @@ namespace MVCInventario.Controllers
         public async Task<IActionResult> Index(ProductoViewModel modelo)
         {
             var Productos = _context.PRODUCTO.Select(p => p);
-
             if (!String.IsNullOrEmpty(modelo.codigoString))
             {
                 Productos = Productos.Where(p => p.CODIGOPRODUCTO.Contains(modelo.codigoString));
             }
 
-            //Buqueda Nombre de Proveedor
             if (!String.IsNullOrEmpty(modelo.nombreString))
             {
                 Productos = Productos.Where(p => p.NOMBREPRODUCTO.Contains(modelo.nombreString));
             }
 
-            //Buqueda Direccion de Proveedor
-            /*if (!String.IsNullOrEmpty(modelo.stockInt.ToString()))
-            {
-                Productos = Productos.Where(p => p.STOCKPRODUCTO <= modelo.stockInt);
-            }
-
-            //Buqueda Email de Proveedor
-            if (!String.IsNullOrEmpty(modelo.precioDecimal.ToString()))
-            {
-                Productos = Productos.Where(p => p.PVPPRODUCTO <= modelo.precioDecimal);
-            }*/
-
-            //Buqueda Ciudad de Proveedor
             if (!String.IsNullOrEmpty(modelo.categoriaString))
             {
                 Productos = Productos.Where(p => p.CATEGORIAPRODUCTO.Contains(modelo.categoriaString));
@@ -109,7 +94,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,CODIGOPRODUCTO,NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCKPRODUCTO,PVPPRODUCTO,CATEGORIAPRODUCTO,CONTENIDOARCHIVO,FOTOPRODUCTO")] PRODUCTO pRODUCTO)
+        public async Task<IActionResult> Create([Bind("id,CODIGOPRODUCTO,NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCKPRODUCTO,PVPPRODUCTO,CATEGORIAPRODUCTO,FOTOPRODUCTO")] PRODUCTO pRODUCTO)
         {
             if (ModelState.IsValid)
             {
@@ -130,13 +115,10 @@ namespace MVCInventario.Controllers
             }
 
             var pRODUCTO = await _context.PRODUCTO.FindAsync(id);
-
             if (pRODUCTO == null)
             {
                 return NotFound();
             }
-
-
             return View(pRODUCTO);
         }
 
@@ -145,7 +127,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,CODIGOPRODUCTO,NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCKPRODUCTO,PVPPRODUCTO,CATEGORIAPRODUCTO,CONTENIDOARCHIVO,FOTOPRODUCTO")] PRODUCTO pRODUCTO)
+        public async Task<IActionResult> Edit(int id, [Bind("id,CODIGOPRODUCTO,NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCKPRODUCTO,PVPPRODUCTO,CATEGORIAPRODUCTO,FOTOPRODUCTO")] PRODUCTO pRODUCTO)
         {
             if (id != pRODUCTO.id)
             {

@@ -97,7 +97,7 @@ namespace MVCInventario.Migrations
                         .HasMaxLength(50);
 
                     b.Property<decimal>("PVPPRODUCTO")
-                        .HasColumnType("decimal(8,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("STOCKPRODUCTO")
                         .HasColumnType("int");

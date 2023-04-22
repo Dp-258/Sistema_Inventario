@@ -1,7 +1,7 @@
 ﻿@model MVCInventario.Models.ProductoViewModel
 
 @{
-    ViewData["Title"] = "Index Producto";
+    ViewData["Title"] = "Index";
 }
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -79,7 +79,7 @@
                         @Html.DisplayFor(modelItem => item.CATEGORIAPRODUCTO)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.FOTOPRODUCTO)
+                        <img src="@item.FOTOPRODUCTO" width="100" height="100">
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
