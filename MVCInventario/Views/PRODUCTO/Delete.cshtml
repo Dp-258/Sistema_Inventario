@@ -1,0 +1,71 @@
+﻿@model MVCInventario.Models.PRODUCTO
+
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Clientes.css">
+</head>
+<h1>BORRAR PRODUCTO</h1>
+
+<h3>¿Está seguro de borrar el producto?</h3>
+<h1 style="color:black; text-align:center" class="separacion">PRODUCTO</h1>
+<hr />
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 bg-light border rounded text-center">
+        <p class="lead font-weight-bold">¿Está seguro de que desea eliminar este producto?</p>
+        <dl class="row listado">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CODIGOPRODUCTO)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CODIGOPRODUCTO)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NOMBREPRODUCTO)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NOMBREPRODUCTO)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DESCRIPCIONPRODUCTO)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DESCRIPCIONPRODUCTO)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.STOCKPRODUCTO)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.STOCKPRODUCTO)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PVPPRODUCTO)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PVPPRODUCTO)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CATEGORIAPRODUCTO)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CATEGORIAPRODUCTO)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FOTOPRODUCTO)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FOTOPRODUCTO)
+            </dd>
+        </dl>
+        <br />
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="id" />
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            <a asp-action="Index">Cancelar</a>
+        </form>
+        <br />
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿@model MVCInventario.Models.PRODUCTO
+
+@{
+    ViewData["Title"] = "Crear Producto";
+}
+
+<h1 style="color:black; text-align:center" class="separacion">Ingrese los datos del producto</h1>
+<hr />
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 bg-light border rounded">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CODIGOPRODUCTO" class="control-label"></label>
+                <input asp-for="CODIGOPRODUCTO" class="form-control" />
+                <span asp-validation-for="CODIGOPRODUCTO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOMBREPRODUCTO" class="control-label"></label>
+                <input asp-for="NOMBREPRODUCTO" class="form-control" />
+                <span asp-validation-for="NOMBREPRODUCTO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DESCRIPCIONPRODUCTO" class="control-label"></label>
+                <input asp-for="DESCRIPCIONPRODUCTO" class="form-control" />
+                <span asp-validation-for="DESCRIPCIONPRODUCTO" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="STOCKPRODUCTO" class="control-label"></label>
+                <input asp-for="STOCKPRODUCTO" class="form-control" />
+                <span asp-validation-for="STOCKPRODUCTO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PVPPRODUCTO" class="control-label"></label>
+                <input asp-for="PVPPRODUCTO" class="form-control" />
+                <span asp-validation-for="PVPPRODUCTO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CATEGORIAPRODUCTO" class="control-label"></label>
+                <input asp-for="CATEGORIAPRODUCTO" class="form-control" />
+                <span asp-validation-for="CATEGORIAPRODUCTO" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FOTOPRODUCTO" class="control-label"></label>
+                <input type="file" asp-for="FOTOPRODUCTO" accept="image/png, image/jpeg, image/jpg " />
+                <span asp-validation-for="FOTOPRODUCTO" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+            <a asp-action="Index">Volver a la lista</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

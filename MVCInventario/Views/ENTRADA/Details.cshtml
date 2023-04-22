@@ -1,0 +1,55 @@
+﻿@model MVCInventario.Models.ENTRADA
+
+@{
+    ViewData["Title"] = "Detalle Entrada -";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Clientes.css">
+</head>
+<h1 style="color:black; text-align:center" class="separacion">Detalles de la entrada</h1>
+<hr />
+<br />
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 bg-light border rounded text-center">
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.proveedor)
+        </dt>
+        <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.proveedor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.producto)
+        </dt>
+        <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.producto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FECHAREGISTROENTRADA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FECHAREGISTROENTRADA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CANTIDADPENTRADA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CANTIDADPENTRADA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MONTOTOTALENTRADA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MONTOTOTALENTRADA)
+        </dd>
+    </dl>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.id">Editar</a> |
+            <a asp-action="Index">Volver a la lista</a>
+        </div>
+        <br/>
+</div>
+</div>
+

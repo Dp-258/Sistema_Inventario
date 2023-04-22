@@ -13,7 +13,7 @@ namespace MVCInventario.Models
         [Display(Name = "Cédula")]
         [StringLength(10, MinimumLength = 10, ErrorMessage = "Ingrese un número de cédula válido")]
         [RegularExpression(@"^[0-9]{1,10}$", ErrorMessage = "Ingrese un número de cédula válido")]
-        [Required(ErrorMessage = "Es necesario ingresar una cédula de indentidad")]
+        [Required(ErrorMessage = "Es necesario ingresar una cédula de identidad válida")]
         public string CEDULACLIENTE { get; set; }
 
         [Display(Name = "Nombre")]

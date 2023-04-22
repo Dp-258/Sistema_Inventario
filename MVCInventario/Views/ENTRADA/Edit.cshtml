@@ -1,0 +1,60 @@
+﻿@model MVCInventario.Models.EntradaViewModel
+
+@{
+    ViewData["Title"] = "Editar Entrada-";
+}
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Clientes.css">
+</head>
+<h1 style="color:black; text-align:center" class="separacion">Edite los datos de la entrada</h1>
+<hr />
+<br />
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 bg-light border rounded">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Entrada.id" />
+            <div class="form-group">
+                <label asp-for="Entrada.IDPROVEEDOR" class="control-label"></label>
+                <select asp-for="Entrada.IDPROVEEDOR" asp-items="Model.ListaProveedores" class="form-control" ></select>
+                <span asp-validation-for="Entrada.IDPROVEEDOR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrada.IDPRODUCTO" class="control-label"></label>
+                <select asp-for="Entrada.IDPRODUCTO" asp-items="Model.ListaProductos" class="form-control" ></select>
+                <span asp-validation-for="Entrada.IDPRODUCTO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrada.FECHAREGISTROENTRADA" class="control-label"></label>
+                <input asp-for="Entrada.FECHAREGISTROENTRADA" class="form-control" />
+                <span asp-validation-for="Entrada.FECHAREGISTROENTRADA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entrada.CANTIDADPENTRADA" class="control-label"></label>
+                <input asp-for="Entrada.CANTIDADPENTRADA" class="form-control" />
+                <span asp-validation-for="Entrada.CANTIDADPENTRADA" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Entrada.MONTOTOTALENTRADA" class="control-label"></label>
+                <input asp-for="Entrada.MONTOTOTALENTRADA" class="form-control" />
+                <span asp-validation-for="Entrada.MONTOTOTALENTRADA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+            <a asp-action="Index">Cancelar</a>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

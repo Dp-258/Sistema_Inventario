@@ -1,0 +1,94 @@
+﻿@model MVCInventario.Models.ProductoViewModel
+
+@{
+    ViewData["Title"] = "Index Producto";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Clientes.css">
+    <script src="~/js/opcionesSelectProducto.js"></script>
+</head>
+
+<h1 class="titulo separacion" style="color:black; text-align:center">PRODUCTOS</h1>
+<div class="text-center separacion">
+    <a asp-action="Create" style="color:black" class="hexagoncli">Crear <i class="fa-solid fa-boxes-stacked fa-4x" style="color: #000000;"></i></a>
+</div>
+<form>
+    <div class="search-container">
+        <label for="search-input" style="color: black; font-size:1.5em;">Buscar por</label>
+        <select class="form-select" id="selectProducto" style="margin-right:15px">
+            <option value="1" selected disabled>Seleccione una opción</option>
+            <option value="1">Código</option>
+            <option value="2">Nombre</option>
+            <option value="3">Categoría</option>
+        </select>
+        <div id="opcionProducto">
+        </div>
+        <input id="btnBuscarPro" class="bg-primary text-white" style="margin-left: 20px; background-color: #cdd0d1" type="submit" value="Buscar Todos" />
+    </div>
+
+</form>
+<div class="contenedortable separacion">
+    <table class="table" style="color:black">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Productos[0].CODIGOPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Productos[0].NOMBREPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Productos[0].DESCRIPCIONPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Productos[0].STOCKPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Productos[0].PVPPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Productos[0].CATEGORIAPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Productos[0].FOTOPRODUCTO)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Productos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CODIGOPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBREPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DESCRIPCIONPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.STOCKPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PVPPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CATEGORIAPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FOTOPRODUCTO)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script src="~/js/opcionesSelectProduto.js"></script>

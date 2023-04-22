@@ -1,0 +1,65 @@
+﻿@model MVCInventario.Models.SalidaViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Clientes.css">
+
+</head>
+
+<h4>SALIDA</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Salida.IDCLIENTE" class="control-label"></label>
+                <select asp-for="Salida.IDCLIENTE" asp-items="Model.NomL" class="form-control">
+                </select>
+                <span asp-validation-for="Salida.IDCLIENTE" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Salida.IDPRODUCTO" class="control-label"></label>
+                <select asp-for="Salida.IDPRODUCTO" asp-items="Model.ProL" class="form-control">
+                </select>
+                <span asp-validation-for="Salida.IDPRODUCTO" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Salida.FECHAREGISTROSALIDA" class="control-label"></label>
+                <input asp-for="Salida.FECHAREGISTROSALIDA" class="form-control" />
+                <span asp-validation-for="Salida.FECHAREGISTROSALIDA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salida.CANTIDADSALIDA" class="control-label"></label>
+                <input asp-for="Salida.CANTIDADSALIDA" class="form-control" />
+                <span asp-validation-for="Salida.CANTIDADSALIDA" class="text-danger"></span>
+            </div>
+            <!--<div class="form-group" hidden >
+                <label asp-for="Salida.MONTOTOTALSALIDA" class="control-label"></label>
+                <input asp-for="Salida.MONTOTOTALSALIDA" class="form-control" />
+                <span asp-validation-for="Salida.MONTOTOTALSALIDA" class="text-danger"></span>
+            </div>-->
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary w-50" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

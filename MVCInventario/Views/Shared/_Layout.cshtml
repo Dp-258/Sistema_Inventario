@@ -28,10 +28,13 @@
         </div>
         <div class="sidebar">
             <ul class="menu">
-                <li><a href="#">Entradas</a></li>
-                <li><a href="#">Salidas</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a asp-area="" asp-controller="PROVEEDOR" asp-action="Index">Proveedor</a></li>
+                <li><a asp-area="" asp-controller="PRODUCTO" asp-action="Index">Inventario</a></li>
+
+                <li><a asp-area="" asp-controller="SALIDA" asp-action="Index">Salida</a></li>
+                <li><a asp-area="" asp-controller="ENTRADA" asp-action="Index">Entrada</a></li>
+                <li><a asp-area="" asp-controller="PRODUCTO" asp-action="Index">Producto</a></li>
+
+                <li><a asp-area="" asp-controller="PROVEEDOR" asp-action="Index">Proveedores</a></li>
                 <li><a asp-area="" asp-controller="CLIENTE" asp-action="Index">Clientes</a></li>
             </ul>
         </div>

@@ -1,0 +1,82 @@
+﻿@model MVCInventario.Models.EntradaViewModel
+@{
+    ViewData["Title"] = "Entrada- ";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Clientes.css">
+  
+</head>
+<h1 class="titulo separacion" style="color:black; text-align:center">ENTRADAS</h1>
+<div class="text-center separacion">
+    <a asp-action="Create" style="color:black" class="hexagoncli">Crear <i class="fa-solid fa-arrow-down-long fa-3x" style="color: #000000;"></i></a>
+</div>
+<br/>
+<br/>
+<br/>
+<form asp-controller="ENTRADA" asp-action="Index" method="get">
+    <p style="color: black; font-size:1.2em;">
+        Nombre del proveedor::
+        <select asp-for="Proveedores" asp-items="Model.ListaProveedores">
+            <option value="">Cualquier proveedor</option>
+        </select>
+        <br /><br />
+        Seleccionar del producto:
+        <select asp-for="Productos" asp-items="Model.ListaProductos">
+            <option value="">Cualquier producto</option>
+        </select>
+        <br /><br />
+
+        <input type="submit" class="bg-primary text-white" value="Buscar"  style="margin-left: 20px; background-color: #cdd0d1" />
+        <br />
+    </p>
+</form>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Entradas[0].proveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entradas[0].producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entradas[0].FECHAREGISTROENTRADA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entradas[0].CANTIDADPENTRADA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entradas[0].MONTOTOTALENTRADA)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Entradas) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.proveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHAREGISTROENTRADA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CANTIDADPENTRADA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MONTOTOTALENTRADA)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

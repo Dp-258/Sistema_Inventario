@@ -8797,19 +8797,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marce\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\InventarioSistema1\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Downloads\\Sistema_Inventario (1)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
       "projectName": "MVCInventario",
-      "projectPath": "C:\\InventarioSistema1\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
-      "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-      "outputPath": "C:\\InventarioSistema1\\Sistema_Inventario\\MVCInventario\\obj\\",
+      "projectPath": "C:\\Users\\User\\Downloads\\Sistema_Inventario (1)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Downloads\\Sistema_Inventario (1)\\Sistema_Inventario\\MVCInventario\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8869,7 +8869,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
