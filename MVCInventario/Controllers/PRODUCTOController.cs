@@ -37,19 +37,7 @@ namespace MVCInventario.Controllers
             {
                 Productos = Productos.Where(p => p.CATEGORIAPRODUCTO.Contains(modelo.categoriaString));
             }
-            foreach (Models.PRODUCTO item in Productos)
-            {
-                var entrada = _context.ENTRADA.Where(p => p.IDPRODUCTO == item.id);
-                var salida = _context.SALIDA.Where(p => p.IDPRODUCTO == item.id);
-                foreach (var e in entrada)
-                {
-                    item.STOCKPRODUCTO += e.CANTIDADPENTRADA;
-                }
-                foreach (var e in salida)
-                {
-                    item.STOCKPRODUCTO -= e.CANTIDADSALIDA;
-                }
-            }
+            
             modelo.Productos = await Productos.ToListAsync();
             return View(modelo);
         }
@@ -69,16 +57,7 @@ namespace MVCInventario.Controllers
                 return NotFound();
             }
 
-            var entrada = _context.ENTRADA.Where(p => p.IDPRODUCTO == pRODUCTO.id);
-            var salida = _context.SALIDA.Where(p => p.IDPRODUCTO == pRODUCTO.id);
-            foreach (var e in entrada)
-            {
-                pRODUCTO.STOCKPRODUCTO += e.CANTIDADPENTRADA;
-            }
-            foreach (var e in salida)
-            {
-                pRODUCTO.STOCKPRODUCTO += e.CANTIDADSALIDA;
-            }
+           
 
             return View(pRODUCTO);
         }
@@ -86,6 +65,7 @@ namespace MVCInventario.Controllers
         // GET: PRODUCTO/Create
         public IActionResult Create()
         {
+
             return View();
         }
 
@@ -98,8 +78,9 @@ namespace MVCInventario.Controllers
         {
             if (ModelState.IsValid)
             {
-                pRODUCTO.STOCKPRODUCTO = 0;
+                
                 _context.Add(pRODUCTO);
+                pRODUCTO.STOCKPRODUCTO = 0;
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -171,16 +152,7 @@ namespace MVCInventario.Controllers
             {
                 return NotFound();
             }
-            var entrada = _context.ENTRADA.Where(p => p.IDPRODUCTO == pRODUCTO.id);
-            var salida = _context.SALIDA.Where(p => p.IDPRODUCTO == pRODUCTO.id);
-            foreach (var e in entrada)
-            {
-                pRODUCTO.STOCKPRODUCTO += e.CANTIDADPENTRADA;
-            }
-            foreach (var e in salida)
-            {
-                pRODUCTO.STOCKPRODUCTO += e.CANTIDADSALIDA;
-            }
+            
             return View(pRODUCTO);
         }
 

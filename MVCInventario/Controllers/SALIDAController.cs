@@ -109,11 +109,23 @@ namespace MVCInventario.Controllers
 
             if (ModelState.IsValid)
             {
+
                 PRODUCTO prod = await _context.PRODUCTO.Where(p => p.id == model.Salida.IDPRODUCTO).SingleOrDefaultAsync();
+
+                if (prod.STOCKPRODUCTO<=0) {
+                    //Arreglar esta cosa
+                    return RedirectToAction(nameof(Index));
+                }
+
+                else
+                {
                 model.Salida.MONTOTOTALSALIDA = (model.Salida.CANTIDADSALIDA * prod.PVPPRODUCTO);
+                    prod.STOCKPRODUCTO -= model.Salida.CANTIDADSALIDA;
+                    _context.Update(prod);
                 _context.Add(model.Salida);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+                }
             }
             return View(model.Salida);
         }

@@ -15,5 +15,7 @@ namespace MVCInventario.Models
 
             public int Id { get; set; }
 
+            public PRODUCTO Producto{ get; set; }
+
         }
     }

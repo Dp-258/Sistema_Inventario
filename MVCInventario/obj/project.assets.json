@@ -8797,19 +8797,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ramol\\.nuget\\packages\\": {}
+    "C:\\Users\\Jhoel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DESINVENTARIO\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+      "projectUniqueName": "C:\\Users\\Jhoel\\Documents\\TomoPeta\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
       "projectName": "MVCInventario",
-      "projectPath": "C:\\DESINVENTARIO\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
-      "packagesPath": "C:\\Users\\ramol\\.nuget\\packages\\",
-      "outputPath": "C:\\DESINVENTARIO\\Sistema_Inventario\\MVCInventario\\obj\\",
+      "projectPath": "C:\\Users\\Jhoel\\Documents\\TomoPeta\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+      "packagesPath": "C:\\Users\\Jhoel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jhoel\\Documents\\TomoPeta\\Sistema_Inventario\\MVCInventario\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ramol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jhoel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8869,7 +8869,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

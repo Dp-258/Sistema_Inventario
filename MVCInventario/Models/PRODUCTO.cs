@@ -20,7 +20,7 @@ namespace MVCInventario.Models
         public string DESCRIPCIONPRODUCTO { get; set; }
         [Display(Name = "Stock")]
         [RegularExpression(@"^[0-9]+$", ErrorMessage = "Ingrese un stock válido")]
-        public int STOCKPRODUCTO { get; set; }
+        public int STOCKPRODUCTO { get; set; } 
         [Display(Name = "Precio")]
         [RegularExpression(@"^[0-9.]+$", ErrorMessage = "Ingrese un precio válido")]
         public decimal PVPPRODUCTO { get; set; }

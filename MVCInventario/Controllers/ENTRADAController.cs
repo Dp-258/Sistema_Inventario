@@ -44,7 +44,7 @@ namespace MVCInventario.Controllers
             }
             model.ListaProductos = new SelectList(_context.PRODUCTO.OrderBy(p => p.NOMBREPRODUCTO).Select(p => p.NOMBREPRODUCTO));
 
-            foreach (var item in entrada)
+            /*foreach (var item in entrada)
             {
                 PROVEEDOR provTemp = await _context.PROVEEDOR.Where(p => p.Id == item.IDPROVEEDOR).SingleOrDefaultAsync();
                 item.proveedor = provTemp.NOMBREPROVEEDOR;
@@ -54,7 +54,7 @@ namespace MVCInventario.Controllers
                 item.producto = provTemp1.NOMBREPRODUCTO;
 
                
-            }
+            }*/
             model.Entradas = await entrada.ToListAsync();
             return View(model);
         }
@@ -100,11 +100,19 @@ namespace MVCInventario.Controllers
 
             if (ModelState.IsValid)
             {
+
                 PRODUCTO prod = await _context.PRODUCTO.Where(p => p.id== model.Entrada.IDPRODUCTO).SingleOrDefaultAsync();
-                model.Entrada.MONTOTOTALENTRADA = (model.Entrada.CANTIDADPENTRADA * prod.PVPPRODUCTO);
+                
+
+                
+                    model.Entrada.MONTOTOTALENTRADA = (model.Entrada.CANTIDADPENTRADA * prod.PVPPRODUCTO);
+                    prod.STOCKPRODUCTO += model.Entrada.CANTIDADPENTRADA;
+                    _context.Update(prod);
+                
                 _context.Add(model.Entrada);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+                
             }
             return View(model.Entrada);
         }
