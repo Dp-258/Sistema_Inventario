@@ -44,7 +44,7 @@ namespace MVCInventario.Controllers
             }
             model.ListaProductos = new SelectList(_context.PRODUCTO.OrderBy(p => p.NOMBREPRODUCTO).Select(p => p.NOMBREPRODUCTO));
 
-            /*foreach (var item in entrada)
+            foreach (var item in entrada)
             {
                 PROVEEDOR provTemp = await _context.PROVEEDOR.Where(p => p.Id == item.IDPROVEEDOR).SingleOrDefaultAsync();
                 item.proveedor = provTemp.NOMBREPROVEEDOR;
@@ -54,7 +54,7 @@ namespace MVCInventario.Controllers
                 item.producto = provTemp1.NOMBREPRODUCTO;
 
                
-            }*/
+            }
             model.Entradas = await entrada.ToListAsync();
             return View(model);
         }
@@ -107,8 +107,7 @@ namespace MVCInventario.Controllers
                 
                     model.Entrada.MONTOTOTALENTRADA = (model.Entrada.CANTIDADPENTRADA * prod.PVPPRODUCTO);
                     prod.STOCKPRODUCTO += model.Entrada.CANTIDADPENTRADA;
-                    _context.Update(prod);
-                
+                    _context.Update(prod);       
                 _context.Add(model.Entrada);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -152,9 +151,18 @@ namespace MVCInventario.Controllers
             {
                 try
                 {
-                    ENTRADA entr = model.Entrada;
-                    entr.id = model.Id;
-                    _context.Update(entr);
+                    ENTRADA entraActual = await _context.ENTRADA
+                        .AsNoTracking()
+                        .SingleOrDefaultAsync(e => e.id == model.Entrada.id);
+
+                    PRODUCTO prod = await _context.PRODUCTO
+                        .SingleOrDefaultAsync(p => p.id == model.Entrada.IDPRODUCTO);
+
+                    prod.STOCKPRODUCTO = prod.STOCKPRODUCTO - entraActual.CANTIDADPENTRADA + model.Entrada.CANTIDADPENTRADA;
+                    model.Entrada.MONTOTOTALENTRADA = model.Entrada.CANTIDADPENTRADA * prod.PVPPRODUCTO;
+
+                    _context.Update(prod);
+                    _context.Update(model.Entrada);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -170,6 +178,7 @@ namespace MVCInventario.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(model);
         }
 
@@ -200,10 +209,31 @@ namespace MVCInventario.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var eNTRADA = await _context.ENTRADA.FindAsync(id);
-            _context.ENTRADA.Remove(eNTRADA);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            var entrada = await _context.ENTRADA.FindAsync(id);
+            var producto = await _context.PRODUCTO.FindAsync(entrada.IDPRODUCTO);
+
+            if (entrada == null)
+            {
+                return NotFound();
+            }
+            
+
+            if (producto.STOCKPRODUCTO <= entrada.MONTOTOTALENTRADA)
+            {
+                //Arreglar esta cosa
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                producto.STOCKPRODUCTO -= entrada.CANTIDADPENTRADA;
+                _context.Update(producto);
+
+                _context.ENTRADA.Remove(entrada);
+                await _context.SaveChangesAsync();
+
+            }
+                return RedirectToAction(nameof(Index));
+           
         }
 
         private bool ENTRADAExists(int id)

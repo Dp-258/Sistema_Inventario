@@ -20,7 +20,7 @@ namespace MVCInventario.Controllers
             _context = context;
         }
 
-        // GET: ENTRADA
+        // GET: SALIDA
         public async Task<IActionResult> Index(SalidaViewModel model)
         {
             var salida = _context.SALIDA.Select(p => p);
@@ -80,17 +80,7 @@ namespace MVCInventario.Controllers
             return View(salida);
         }
 
-        // GET: ENTRADA/Create
-        public IActionResult Crear(SALIDA salida)
-        {
-            // Guardar la salida en la base de datos
-            _context.SALIDA.Add(salida);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-
-
+        // GET: SALIDA/Create
         public IActionResult Create(SalidaViewModel model)
         {
             model.NomL = new SelectList(_context.CLIENTE.ToList(), "Id", "NOMBRECLIENTE");
@@ -165,9 +155,26 @@ namespace MVCInventario.Controllers
             {
                 try
                 {
-                    SALIDA entr = model.Salida;
-                    entr.id = model.Id;
-                    _context.Update(entr);
+                    SALIDA salActual = await _context.SALIDA
+                        .AsNoTracking()
+                        .SingleOrDefaultAsync(e => e.id == model.Salida.id);
+
+                    PRODUCTO prod = await _context.PRODUCTO
+                        .SingleOrDefaultAsync(p => p.id == model.Salida.IDPRODUCTO);
+
+                    int stockActual = prod.STOCKPRODUCTO + salActual.CANTIDADSALIDA;
+                    int stockFinal = stockActual - model.Salida.CANTIDADSALIDA;
+
+                    if (stockFinal < 0)
+                    {
+                        ModelState.AddModelError("", "La cantidad de la salida no puede hacer que el stock sea negativo.");
+                        return View(model);
+                    }
+
+                    prod.STOCKPRODUCTO = stockFinal;
+
+                    _context.Update(prod);
+                    _context.Update(model.Salida);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -183,8 +190,10 @@ namespace MVCInventario.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(model);
         }
+
 
         // GET: ENTRADA/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -213,10 +222,22 @@ namespace MVCInventario.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var sALIDA = await _context.SALIDA.FindAsync(id);
-            _context.SALIDA.Remove(sALIDA);
-            await _context.SaveChangesAsync();
+            var salida = await _context.SALIDA.FindAsync(id);
+            var producto = await _context.PRODUCTO.FindAsync(salida.IDPRODUCTO);
+
+            if (salida == null)
+            {
+                return NotFound();
+            }
+
+            
+                producto.STOCKPRODUCTO += salida.CANTIDADSALIDA;
+                _context.Update(producto);
+
+                _context.SALIDA.Remove(salida);
+                await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+
         }
 
         private bool SALIDAExists(int id)

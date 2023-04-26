@@ -8,10 +8,12 @@ namespace MVCInventario.Models
         {
             public List<SALIDA> Salidas { get; set; }
             public SALIDA Salida { get; set; }
+
+        //CATEGORIAS
             public SelectList NomL { get; set; }
             public SelectList ProL { get; set; }
-            public string Productos { get; set; }
             public string Clientes { get; set; }
+            public string Productos { get; set; }
 
             public int Id { get; set; }
 
