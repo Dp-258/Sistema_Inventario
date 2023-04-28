@@ -7,6 +7,7 @@
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Clientes.css">
+    <script src="~/js/validacionCedula.js"></script>
 </head>
 <h1 style="color:black; text-align:center" class="separacion">Edite los datos del cliente</h1>
 <hr />
@@ -20,7 +21,7 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="CEDULACLIENTE" class="control-label"></label>
-                <input asp-for="CEDULACLIENTE" class="form-control" />
+                <input asp-for="CEDULACLIENTE" id="cedulatxt" oninput="validarCampoTexto()" onchange="validarCampoTextoDesp()" class="form-control" />
                 <span asp-validation-for="CEDULACLIENTE" class="text-danger"></span>
             </div>
             <div class="form-group">

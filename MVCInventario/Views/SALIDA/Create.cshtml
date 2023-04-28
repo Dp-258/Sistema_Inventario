@@ -32,9 +32,9 @@
                 <span asp-validation-for="Salida.IDPRODUCTO" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" hidden>
                 <label asp-for="Salida.FECHAREGISTROSALIDA" class="control-label"></label>
-                <input asp-for="Salida.FECHAREGISTROSALIDA" class="form-control" />
+                <input asp-for="Salida.FECHAREGISTROSALIDA" class="form-control" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
                 <span asp-validation-for="Salida.FECHAREGISTROSALIDA" class="text-danger"></span>
             </div>
             <div class="form-group">

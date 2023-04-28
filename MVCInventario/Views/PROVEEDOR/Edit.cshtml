@@ -18,7 +18,7 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="CEDULAPROVEEDOR" class="control-label"></label>
-                <input asp-for="CEDULAPROVEEDOR" class="form-control" />
+                <input asp-for="CEDULAPROVEEDOR" id="ruc" class="form-control" oninput="validarCampoTexto()" onchange="validarCampoTextoDesp()" />
                 <span asp-validation-for="CEDULAPROVEEDOR" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -50,6 +50,86 @@
         </div>
     </div>
 </div>
+<script>
+    function validarCampoTexto() {
+        const campoTexto = document.getElementById("ruc");
+        const esValido = validarCampo(campoTexto.value);
+        if (esValido) {
+            if (!(validarRUC(campoTexto.value.toString()))) {
+                campoTexto.setCustomValidity("¡Ingrese un número de RUC correcto!");
+                campoTexto.setAttribute('aria-invalid', 'true');
+                campoTexto.style.border = "1px solid red";
+            }
+            else {
+                campoTexto.style.border = "1px solid #ced4da";
+                campoTexto.setAttribute('aria-invalid', 'false');
+            }
+        } else {
+            campoTexto.style.border = "1px solid #ced4da";
+            campoTexto.setAttribute('aria-invalid', 'false');
+        }
+    }
+
+    function validarCampoTextoDesp() {
+        const campoTexto = document.getElementById("ruc");
+        const label = document.getElementById("erroreslbl");
+        const esValido = validarCampo(campoTexto.value);
+        if (esValido) {
+            if (!(validarRUC(campoTexto.value.toString()))) {
+                campoTexto.setCustomValidity("¡Ingrese un número de RUC correcto!");
+                campoTexto.setAttribute('aria-invalid', 'true');
+                campoTexto.style.border = "1px solid red";
+                campoTexto.value = "";
+                label.value = "¡Ingrese un número de RUC correcto!"
+            }
+            else {
+                campoTexto.style.border = "1px solid #ced4da";
+                campoTexto.setAttribute('aria-invalid', 'false');
+            }
+        } else {
+            campoTexto.style.border = "1px solid #ced4da";
+            campoTexto.setAttribute('aria-invalid', 'false');
+        }
+    }
+
+    function validarCampo(campoTexto) {
+        // Verificar que el campo no esté vacío
+        if (campoTexto.length >= 1) {
+            return true;
+        }
+        return false;
+    }
+    function validarRUC(ruc) {
+        var ruc = document.getElementById("ruc").value;
+
+        if (ruc.length != 13) {
+            return false;
+        }
+
+        var rucDigits = ruc.substring(0, 10);
+        var lastDigits = ruc.substring(10, 13);
+
+        var sum = 0;
+        var coeficients = [2, 1, 2, 1, 2, 1, 2, 1, 2];
+
+        for (var i = 0; i < coeficients.length; i++) {
+            var digit = parseInt(rucDigits.charAt(i)) * coeficients[i];
+            sum += (digit < 10) ? digit : digit - 9;
+        }
+
+        var calculatedDigit = (sum % 10 === 0) ? 0 : 10 - (sum % 10);
+
+        if (lastDigits === "001" && parseInt(rucDigits.charAt(9)) === calculatedDigit) {
+            return true;
+        } else {
+            var erroresLbl = document.getElementById("erroreslbl");
+            erroresLbl.textContent = "El RUC es inválido.";
+            return false;
+        }
+    }
+</script>
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -107,6 +107,7 @@ namespace MVCInventario.Controllers
                 
                     model.Entrada.MONTOTOTALENTRADA = (model.Entrada.CANTIDADPENTRADA * prod.PVPPRODUCTO);
                     prod.STOCKPRODUCTO += model.Entrada.CANTIDADPENTRADA;
+                    
                     _context.Update(prod);       
                 _context.Add(model.Entrada);
                 await _context.SaveChangesAsync();
@@ -218,10 +219,12 @@ namespace MVCInventario.Controllers
             }
             
 
-            if (producto.STOCKPRODUCTO <= entrada.MONTOTOTALENTRADA)
+            if (producto.STOCKPRODUCTO < entrada.CANTIDADPENTRADA)
             {
                 //Arreglar esta cosa
+                
                 return RedirectToAction(nameof(Index));
+
             }
             else
             {

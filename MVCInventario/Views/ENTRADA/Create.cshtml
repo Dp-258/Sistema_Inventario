@@ -26,9 +26,9 @@
                 <select asp-for="Entrada.IDPRODUCTO" asp-items="Model.ListaProductos" class="form-control"></select>
                 <span asp-validation-for="Entrada.IDPRODUCTO" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" hidden >
                 <label asp-for="Entrada.FECHAREGISTROENTRADA" class="control-label"></label>
-                <input asp-for="Entrada.FECHAREGISTROENTRADA" class="form-control" />
+                <input asp-for="Entrada.FECHAREGISTROENTRADA" class="form-control" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
                 <span asp-validation-for="Entrada.FECHAREGISTROENTRADA" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -1915,3 +1915,4 @@ C:\Users\Jhoel\Documents\TomoPeta\Sistema_Inventario\MVCInventario\obj\Debug\net
 C:\Users\Jhoel\Documents\TomoPeta\Sistema_Inventario\MVCInventario\obj\Debug\netcoreapp3.1\Razor\Views\PRODUCTO\Details.cshtml.g.cs
 C:\Users\Jhoel\Documents\TomoPeta\Sistema_Inventario\MVCInventario\obj\Debug\netcoreapp3.1\Razor\Views\PRODUCTO\Edit.cshtml.g.cs
 C:\Users\Jhoel\Documents\TomoPeta\Sistema_Inventario\MVCInventario\obj\Debug\netcoreapp3.1\Razor\Views\PRODUCTO\Index.cshtml.g.cs
+C:\Users\Jhoel\Documents\TomoPeta\Sistema_Inventario\MVCInventario\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ErrorModal.cshtml.g.cs

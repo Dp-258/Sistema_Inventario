@@ -12,45 +12,124 @@
 <br />
 <div class="row">
     <div class="col-md-3"></div>
-         <div class="col-md-6 bg-light border rounded">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="CEDULAPROVEEDOR" class="control-label"></label>
-                    <input asp-for="CEDULAPROVEEDOR" class="form-control" />
-                    <span asp-validation-for="CEDULAPROVEEDOR" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="NOMBREPROVEEDOR" class="control-label">Nombre completo</label>
-                    <input asp-for="NOMBREPROVEEDOR" class="form-control" />
-                    <span asp-validation-for="NOMBREPROVEEDOR" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="DIRECCIONPROVEEDOR" class="control-label"></label>
-                    <input asp-for="DIRECCIONPROVEEDOR" class="form-control" />
-                    <span asp-validation-for="DIRECCIONPROVEEDOR" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="CORREOPROVEEDOR" class="control-label"></label>
-                    <input asp-for="CORREOPROVEEDOR" class="form-control" />
-                    <span asp-validation-for="CORREOPROVEEDOR" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="CIUDADPROVEEDOR" class="control-label"></label>
-                    <input asp-for="CIUDADPROVEEDOR" class="form-control" />
-                    <span asp-validation-for="CIUDADPROVEEDOR" class="text-danger"></span>
-                </div>
-                <div class="form-group text-center">
-                    <input type="submit" value="Crear" class="btn btn-primary w-50" />
-                </div>
-            </form>
-            <div>
-                <a asp-action="Index">Volver al listado</a>
+    <div class="col-md-6 bg-light border rounded">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CEDULAPROVEEDOR" class="control-label"></label>
+                <input asp-for="CEDULAPROVEEDOR" id="ruc" class="form-control" oninput="validarCampoTexto()" onchange="validarCampoTextoDesp()" />
+                <span asp-validation-for="CEDULAPROVEEDOR" id="erroreslbl" class="text-danger"></span>
             </div>
-        
+            <div class="form-group">
+                <label asp-for="NOMBREPROVEEDOR" class="control-label">Nombre completo</label>
+                <input asp-for="NOMBREPROVEEDOR" class="form-control" />
+                <span asp-validation-for="NOMBREPROVEEDOR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DIRECCIONPROVEEDOR" class="control-label"></label>
+                <input asp-for="DIRECCIONPROVEEDOR" class="form-control" />
+                <span asp-validation-for="DIRECCIONPROVEEDOR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CORREOPROVEEDOR" class="control-label"></label>
+                <input asp-for="CORREOPROVEEDOR" class="form-control" />
+                <span asp-validation-for="CORREOPROVEEDOR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CIUDADPROVEEDOR" class="control-label"></label>
+                <input asp-for="CIUDADPROVEEDOR" class="form-control" />
+                <span asp-validation-for="CIUDADPROVEEDOR" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Crear" class="btn btn-primary w-50" />
+            </div>
+        </form>
+        <div>
+            <a asp-action="Index">Volver al listado</a>
+        </div>
+
     </div>
 </div>
+<script>
+    function validarCampoTexto() {
+        const campoTexto = document.getElementById("ruc");
+        const esValido = validarCampo(campoTexto.value);
+        if (esValido) {
+            if (!(validarRUC(campoTexto.value.toString()))) {
+                campoTexto.setCustomValidity("¡Ingrese un número de RUC correcto!");
+                campoTexto.setAttribute('aria-invalid', 'true');
+                campoTexto.style.border = "1px solid red";
+            }
+            else {
+                campoTexto.style.border = "1px solid #ced4da";
+                campoTexto.setAttribute('aria-invalid', 'false');
+            }
+        } else {
+            campoTexto.style.border = "1px solid #ced4da";
+            campoTexto.setAttribute('aria-invalid', 'false');
+        }
+    }
 
+    function validarCampoTextoDesp() {
+        const campoTexto = document.getElementById("ruc");
+        const label = document.getElementById("erroreslbl");
+        const esValido = validarCampo(campoTexto.value);
+        if (esValido) {
+            if (!(validarRUC(campoTexto.value.toString()))) {
+                campoTexto.setCustomValidity("¡Ingrese un número de RUC correcto!");
+                campoTexto.setAttribute('aria-invalid', 'true');
+                campoTexto.style.border = "1px solid red";
+                campoTexto.value = "";
+                label.value = "¡Ingrese un número de RUC correcto!"
+            }
+            else {
+                campoTexto.style.border = "1px solid #ced4da";
+                campoTexto.setAttribute('aria-invalid', 'false');
+            }
+        } else {
+            campoTexto.style.border = "1px solid #ced4da";
+            campoTexto.setAttribute('aria-invalid', 'false');
+        }
+    }
+
+    function validarCampo(campoTexto) {
+        // Verificar que el campo no esté vacío
+        if (campoTexto.length >= 1) {
+            return true;
+        }
+        return false;
+    }
+    function validarRUC(ruc) {
+        var ruc = document.getElementById("ruc").value;
+
+        if (ruc.length != 13) {
+            return false;
+        }
+
+        var rucDigits = ruc.substring(0, 10);
+        var lastDigits = ruc.substring(10, 13);
+
+        var sum = 0;
+        var coeficients = [2, 1, 2, 1, 2, 1, 2, 1, 2];
+
+        for (var i = 0; i < coeficients.length; i++) {
+            var digit = parseInt(rucDigits.charAt(i)) * coeficients[i];
+            sum += (digit < 10) ? digit : digit - 9;
+        }
+
+        var calculatedDigit = (sum % 10 === 0) ? 0 : 10 - (sum % 10);
+
+        if (lastDigits === "001" && parseInt(rucDigits.charAt(9)) === calculatedDigit) {
+            return true;
+        } else {
+            var erroresLbl = document.getElementById("erroreslbl");
+            erroresLbl.textContent = "El RUC es inválido.";
+            return false;
+        }
+    }
+</script>
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -27,7 +27,7 @@
                 <select asp-for="Salida.IDPRODUCTO" asp-items="Model.ProL" class="form-control"></select>
                 <span asp-validation-for="Salida.IDPRODUCTO" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" hidden>
                 <label asp-for="Salida.FECHAREGISTROSALIDA" class="control-label"></label>
                 <input asp-for="Salida.FECHAREGISTROSALIDA" class="form-control" />
                 <span asp-validation-for="Salida.FECHAREGISTROSALIDA" class="text-danger"></span>

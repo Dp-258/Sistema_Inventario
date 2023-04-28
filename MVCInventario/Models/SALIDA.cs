@@ -11,7 +11,7 @@ namespace MVCInventario.Models
         public int id { get; set; }
 
         [Display(Name = "CLIENTE")]
-        [Required(ErrorMessage = "Es necesario ingresar un proveedor  ")]
+        [Required(ErrorMessage = "Es necesario ingresar un cliente  ")]
 
         public int IDCLIENTE { get; set; }
         [Display(Name = "Producto")]
@@ -24,23 +24,23 @@ namespace MVCInventario.Models
         public DateTime FECHAREGISTROSALIDA { get; set; }
         [Display(Name = "Cantidad")]
         [Required(ErrorMessage = "Es necesario ingresar una cantidad")]
+        [RegularExpression(@"^\d+$", ErrorMessage = "Ingrese un número entero y positivo")]
 
         public int CANTIDADSALIDA { get; set; }
         [Display(Name = "Total")]
         [Column(TypeName = "decimal(8,2)")]
+        //[RegularExpression(@"^(?=.[1-9])\d*(.\d{1,2})?$", ErrorMessage = "Ingrese una cantidad positiva")]
 
-        public decimal MONTOTOTALSALIDA { get; set; } 
+        public decimal MONTOTOTALSALIDA { get; set; }
 
 
         [NotMapped]
         [Display(Name = "Cliente")]
         public string cliente { get; set; }
-       
+
         [NotMapped]
         [Display(Name = "Producto")]
         public string producto { get; set; }
-       
-        
-       
+
     }
 }
