@@ -1,8 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 <link rel="stylesheet" href="~/css/estiloHome.css">
-
+@if (SignInManager.IsSignedIn(User)){
 <script>
     var elemento = document.getElementById("header_nav");
     elemento.remove();
@@ -28,3 +31,18 @@
         <a asp-area="" asp-controller="PROVEEDOR" asp-action="Index" class="hexagon"><i class="fa-solid fa-truck-fast fa-5x" style="color: #000000;"></i>PROVEEDORES</a>
     </div>
 </div>
+}else{
+    <script>
+        var elemento = document.getElementById("header_nav");
+        elemento.remove();
+    </script>
+    <header>
+        <h1>Sistema de inventario</h1>
+    </header>
+    <section>
+        <p>Bienvenido al sistema de inventario. Este sistema te permite mantener un registro actualizado de tus productos y servicios. Para poder acceder a las funciones de este sistema, es necesario iniciar sesión con tu cuenta.</p>
+    </section>
+    <footer>
+        <p>¡Gracias por utilizar nuestro sistema de inventario!</p>
+    </footer>
+}

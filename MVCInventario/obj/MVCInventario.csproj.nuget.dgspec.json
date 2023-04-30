@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jhoel\\Documents\\TomoPeta\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {}
+    "C:\\Users\\User\\source\\repos\\Sistema_Inventarionuevo\\MVCInventario\\MVCInventario.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jhoel\\Documents\\TomoPeta\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {
+    "C:\\Users\\User\\source\\repos\\Sistema_Inventarionuevo\\MVCInventario\\MVCInventario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jhoel\\Documents\\TomoPeta\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\Sistema_Inventarionuevo\\MVCInventario\\MVCInventario.csproj",
         "projectName": "MVCInventario",
-        "projectPath": "C:\\Users\\Jhoel\\Documents\\TomoPeta\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
-        "packagesPath": "C:\\Users\\Jhoel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jhoel\\Documents\\TomoPeta\\Sistema_Inventario\\MVCInventario\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\repos\\Sistema_Inventarionuevo\\MVCInventario\\MVCInventario.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\Sistema_Inventarionuevo\\MVCInventario\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jhoel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,22 +37,30 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.15, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.15, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.32, )"
+              "version": "[6.0.15, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.32, )"
+              "version": "[6.0.15, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[6.0.13, )"
             }
           },
           "imports": [

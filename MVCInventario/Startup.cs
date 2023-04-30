@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MVCInventario.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace MVCInventario
 {
@@ -29,6 +30,10 @@ namespace MVCInventario
 
             services.AddDbContext<MVCInventarioContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MVCInventarioContext")));
+
+            services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders().AddRoles<IdentityRole>().AddEntityFrameworkStores<MVCInventarioContext>();
+
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,14 +53,14 @@ namespace MVCInventario
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
+                endpoints.MapRazorPages(); endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=USUARIO}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

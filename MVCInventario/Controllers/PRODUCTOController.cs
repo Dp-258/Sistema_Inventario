@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using MVCInventario.Models;
 
 namespace MVCInventario.Controllers
 {
+    [Authorize]
     public class PRODUCTOController : Controller
     {
         private readonly MVCInventarioContext _context;
@@ -18,7 +20,7 @@ namespace MVCInventario.Controllers
         {
             _context = context;
         }
-
+        [Authorize(Roles = "Jefe, Operador")]
         // GET: PRODUCTO
         public async Task<IActionResult> Index(ProductoViewModel modelo)
         {
@@ -43,6 +45,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: PRODUCTO/Details/5
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -63,6 +66,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: PRODUCTO/Create
+        [Authorize(Roles = "Jefe, Operador")]
         public IActionResult Create()
         {
 
@@ -74,6 +78,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Create([Bind("id,CODIGOPRODUCTO,NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCKPRODUCTO,PVPPRODUCTO,CATEGORIAPRODUCTO,FOTOPRODUCTO")] PRODUCTO pRODUCTO)
         {
             if (ModelState.IsValid)
@@ -88,6 +93,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: PRODUCTO/Edit/5
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -108,6 +114,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Edit(int id, [Bind("id,CODIGOPRODUCTO,NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCKPRODUCTO,PVPPRODUCTO,CATEGORIAPRODUCTO,FOTOPRODUCTO")] PRODUCTO pRODUCTO)
         {
             if (id != pRODUCTO.id)
@@ -139,6 +146,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: PRODUCTO/Delete/5
+        [Authorize(Roles = "Jefe")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -159,6 +167,7 @@ namespace MVCInventario.Controllers
         // POST: PRODUCTO/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Jefe")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var pRODUCTO = await _context.PRODUCTO.FindAsync(id);

@@ -1,0 +1,67 @@
+﻿@page
+@using Microsoft.AspNetCore.Identity;
+@model RegisterModel
+@{
+    ViewData["Title"] = "Registrar";
+}
+@if (User.Identity.IsAuthenticated)
+{
+   
+    <h1>Registrar un usuario</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <h2>Crear un nuevo usuario</h2>
+                <hr />
+
+                <div class="form-floating">
+                    <input asp-for="Input.Nombre" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.Nombre">Nombre</label>
+                    <span asp-validation-for="Input.Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Input.Apellido" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.Apellido">Apellido</label>
+                    <span asp-validation-for="Input.Apellido" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.Password">Contraseña</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.ConfirmPassword">Confirmar Contraseña</label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <label asp-for="Input.Role">Rol</label>
+
+                    <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-select" aria-required="true">
+                        <option disabled selected>Elegir Rol</option>
+                    </select>
+                    <span asp-validation-for="Input.Role" class="text-danger"></span>
+                </div>
+                <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">REGISTRARSE</button>
+            </form>
+        </div>
+        <div class="col-md-6 col-md-offset-2">
+        </div>
+    </div>
+
+    @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+}
+else
+    {
+    <p>Por favor, inicie sesión para ver el contenido</p>
+    }
+
+

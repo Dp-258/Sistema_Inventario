@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using MVCInventario.Models;
 
 namespace MVCInventario.Controllers
 {
+    [Authorize]
     public class ENTRADAController : Controller
     {
         private readonly MVCInventarioContext _context;
@@ -21,6 +23,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: ENTRADA
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Index(EntradaViewModel model)
         {
             var entrada = _context.ENTRADA.Select(p => p);
@@ -60,6 +63,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: ENTRADA/Details/5
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -83,6 +87,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: ENTRADA/Create
+        [Authorize(Roles = "Jefe, Operador")]
         public IActionResult Create(EntradaViewModel model)
         {
             model.ListaProveedores = new SelectList(_context.PROVEEDOR.ToList(), "Id", "NOMBREPROVEEDOR");
@@ -95,6 +100,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Create(string Idnouse, EntradaViewModel model)
         {
 
@@ -118,6 +124,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: ENTRADA/Edit/5
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Edit(EntradaViewModel model)
         {
             model.ListaProveedores = new SelectList(_context.PROVEEDOR.ToList(), "Id", "NOMBREPROVEEDOR");
@@ -141,6 +148,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Edit(int id, EntradaViewModel model)
         {
             if (id != model.Id)
@@ -184,6 +192,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: ENTRADA/Delete/5
+        [Authorize(Roles = "Jefe")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -206,6 +215,7 @@ namespace MVCInventario.Controllers
         }
 
         // POST: ENTRADA/Delete/5
+        [Authorize(Roles = "Jefe")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

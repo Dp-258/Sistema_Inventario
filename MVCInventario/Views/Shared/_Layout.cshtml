@@ -19,25 +19,31 @@
 </head>
 <body style="background-image: url('https://static.vecteezy.com/system/resources/previews/006/469/271/original/abstract-white-background-with-halftone-texture-free-vector.jpg'); background-repeat: no-repeat; background-size: cover; font-family: 'Titillium Web', sans-serif; ">
 
-    <header id="header_nav">
+    <header >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3">
+            <div id="header_nav">
+                <div>
+                    <button class="hamburger-button" id="boton-nav">
+                        <span class="hamburger-icon"></span>
+                    </button>
+                </div>
+                <div class="sidebar">
+                    <ul class="menu">
+                        <li><a asp-area="" asp-controller="PRODUCTO" asp-action="Index">Inventario</a></li>
 
-        <div>
-            <button class="hamburger-button" id="boton-nav">
-                <span class="hamburger-icon"></span>
-            </button>
-        </div>
-        <div class="sidebar">
-            <ul class="menu">
-                <li><a asp-area="" asp-controller="PRODUCTO" asp-action="Index">Inventario</a></li>
+                        <li><a asp-area="" asp-controller="SALIDA" asp-action="Index">Salida</a></li>
+                        <li><a asp-area="" asp-controller="ENTRADA" asp-action="Index">Entrada</a></li>
+                        <li><a asp-area="" asp-controller="PRODUCTO" asp-action="Index">Producto</a></li>
 
-                <li><a asp-area="" asp-controller="SALIDA" asp-action="Index">Salida</a></li>
-                <li><a asp-area="" asp-controller="ENTRADA" asp-action="Index">Entrada</a></li>
-                <li><a asp-area="" asp-controller="PRODUCTO" asp-action="Index">Producto</a></li>
+                        <li><a asp-area="" asp-controller="PROVEEDOR" asp-action="Index">Proveedores</a></li>
+                        <li><a asp-area="" asp-controller="CLIENTE" asp-action="Index">Clientes</a></li>
+                    </ul>
+                </div>
 
-                <li><a asp-area="" asp-controller="PROVEEDOR" asp-action="Index">Proveedores</a></li>
-                <li><a asp-area="" asp-controller="CLIENTE" asp-action="Index">Clientes</a></li>
-            </ul>
-        </div>
+            </div>
+            <partial name="_LoginPartial" />
+        </nav>
+       
     </header>
   
     <div class="mover">

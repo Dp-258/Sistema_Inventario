@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using MVCInventario.Models;
 
 namespace MVCInventario.Controllers
 {
+    [Authorize]
     public class SALIDAController : Controller
     {
         private readonly MVCInventarioContext _context;
@@ -21,6 +23,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: SALIDA
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Index(SalidaViewModel model)
         {
             var salida = _context.SALIDA.Select(p => p);
@@ -58,6 +61,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: ENTRADA/Details/5
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -81,6 +85,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: SALIDA/Create
+        [Authorize(Roles = "Jefe, Operador")]
         public IActionResult Create(SalidaViewModel model)
         {
             model.NomL = new SelectList(_context.CLIENTE.ToList(), "Id", "NOMBRECLIENTE");
@@ -94,6 +99,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Create(string Idnouse, SalidaViewModel model)
         {
 
@@ -121,6 +127,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: ENTRADA/Edit/5
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Edit(SalidaViewModel model)
         {
             model.NomL = new SelectList(_context.CLIENTE.ToList(), "Id", "NOMBRECLIENTE");
@@ -144,6 +151,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Edit(int id, SalidaViewModel model)
         {
             if (id != model.Id)
@@ -196,6 +204,7 @@ namespace MVCInventario.Controllers
 
 
         // GET: ENTRADA/Delete/5
+        [Authorize(Roles = "Jefe")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -220,6 +229,7 @@ namespace MVCInventario.Controllers
         // POST: ENTRADA/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Jefe")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var salida = await _context.SALIDA.FindAsync(id);
