@@ -4,9 +4,8 @@
 @{
     ViewData["Title"] = "Registrar";
 }
-@if (User.Identity.IsAuthenticated)
-{
-   
+
+
     <h1>Registrar un usuario</h1>
 
     <div class="row">
@@ -58,10 +57,10 @@
     @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
-}
+<!--}
 else
     {
     <p>Por favor, inicie sesión para ver el contenido</p>
     }
-
+    -->
 

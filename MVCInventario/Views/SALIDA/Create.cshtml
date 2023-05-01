@@ -12,16 +12,17 @@
 
 </head>
 
-<h4>SALIDA</h4>
+<h1 style="color:black; text-align:center" class="separacion">Ingrese los datos de la salida</h1>
 <hr />
+<br />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 bg-light border rounded">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Salida.IDCLIENTE" class="control-label"></label>
-                <select asp-for="Salida.IDCLIENTE" asp-items="Model.NomL" class="form-control">
-                </select>
+                <select asp-for="Salida.IDCLIENTE" asp-items="Model.NomL" class="form-control"></select>
                 <span asp-validation-for="Salida.IDCLIENTE" class="text-danger"></span>
             </div>
 
@@ -47,16 +48,16 @@
                 <input asp-for="Salida.MONTOTOTALSALIDA" class="form-control" />
                 <span asp-validation-for="Salida.MONTOTOTALSALIDA" class="text-danger"></span>
             </div>-->
-            <div class="form-group">
+            <div class="form-group text-center">
                 <input type="submit" value="Crear" class="btn btn-primary w-50" />
             </div>
         </form>
+        <div>
+            <a asp-action="Index">Regresar</a>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Regresar</a>
-</div>
 
 @section Scripts {
     @{

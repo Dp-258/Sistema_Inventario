@@ -1,11 +1,11 @@
 ﻿.encabezado-titulo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    font-size:80%;
+    
+    font-size:4rem;
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: #cdd0d1;
 }
+.titulo{
+    font-size:4em;
+}
+

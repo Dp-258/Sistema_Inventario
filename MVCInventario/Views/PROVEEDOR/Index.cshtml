@@ -16,14 +16,7 @@
 <form>
     <div class="search-container-pro">
         <label for="search-input" style="color: black; font-size:1.5em;">Buscar por</label>
-        <select class="form-select" id="selectProveedor" style="margin-right:15px">
-            <option value="1" selected disabled>Seleccione una opción</option>
-            <option value="1">Cédula</option>
-            <option value="2">Nombre</option>
-            <option value="3">Dirección</option>
-            <option value="4">Email</option>
-            <option value="5">Ciudad</option>
-        </select>
+        <input name="CedString" type="text" asp-for="CedString" id="search-input" placeholder="Ingrese el RUC">
         <div id="opcionProveedor">
         </div>
         <input id="btnBuscarPro" class="bg-primary text-white" style="margin-left: 20px; background-color: #cdd0d1" type="submit" value="Buscar " />

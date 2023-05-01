@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace MVCInventario.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AppRolesController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;

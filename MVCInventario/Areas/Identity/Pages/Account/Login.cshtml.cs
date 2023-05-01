@@ -43,11 +43,11 @@ namespace MVCInventario.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required(ErrorMessage = "El campo {0} es requerido")]
-            [EmailAddress]
+            [Required(ErrorMessage = "El correo electrónico es requerido")]
+            [EmailAddress(ErrorMessage = "El correo electrónico es requerido")]
             public string Email { get; set; }
 
-            [Required(ErrorMessage = "El campo {0} es requerido")]
+            [Required(ErrorMessage = "La contraseña es requerida")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
@@ -99,7 +99,7 @@ namespace MVCInventario.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Usuario o contraseña no encontrados");
                     return Page();
                 }
             }

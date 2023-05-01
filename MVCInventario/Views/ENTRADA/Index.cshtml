@@ -12,22 +12,16 @@
     <a asp-action="Create" style="color:black" class="hexagoncli">Crear <i class="fa-solid fa-arrow-down-long fa-3x" style="color: #000000;"></i></a>
 </div>
 <br/>
-<br/>
-<br/>
 <form asp-controller="ENTRADA" asp-action="Index" method="get">
     <p style="color: black; font-size:1.2em;">
-        Nombre del proveedor::
-        <select asp-for="Proveedores" asp-items="Model.ListaProveedores">
-            <option value="">Cualquier proveedor</option>
-        </select>
+        Nombre del proveedor:
+        <input name="CedString" type="text" asp-for="Proveedores" id="search-input" placeholder="Ingrese el nombre del proveedor">
         <br /><br />
-        Seleccionar del producto:
-        <select asp-for="Productos" asp-items="Model.ListaProductos">
-            <option value="">Cualquier producto</option>
-        </select>
+        Ingrese la fecha:
+        <input name="CedString" type="date" asp-for="Entrada" id="search-input" placeholder="Ingrese la fecha">
         <br /><br />
 
-        <input type="submit" class="bg-primary text-white" value="Buscar"  style="margin-left: 20px; background-color: #cdd0d1" />
+        <input type="submit" class="bg-primary text-white" value="Buscar" style="margin-left: 20px; background-color: #cdd0d1" />
         <br />
     </p>
 </form>
@@ -80,3 +74,5 @@
 }
     </tbody>
 </table>
+<br />
+<br />

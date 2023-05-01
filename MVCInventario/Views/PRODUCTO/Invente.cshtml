@@ -1,0 +1,137 @@
+﻿@model IEnumerable<MVCInventario.Models.PRODUCTO>
+
+@{
+    ViewData["Title"] = "Invente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Pager pager = new Pager();
+
+    int NuPag = 0;
+
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        NuPag = pager.iPaginaActual;
+    }
+
+}
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Clientes.css">
+    <script src="~/js/opcionesSelectProducto.js"></script>
+
+</head>
+
+
+<h1 class="titulo separacion" style="color:black; text-align:center; font-size:3.5rem">Inventario</h1>
+<br />
+<div style="margin-left:1rem">
+    <form asp-controller="PRODUCTO" asp-action="Invente">
+        <div class="search-container-pro">
+            <label for="search-input" style="color: black; font-size:1.2rem; margin-right:1.5rem;"> Código del Producto: </label>
+            <input type="text" name="ParametroBusc" placeholder="Ingrese el código">
+            <input class="bg-primary text-white" type="submit" value="Buscar" />
+        </div>
+    </form>
+</div>
+<br />
+<br />
+
+
+<div class="contenedortable separacion">
+    <table class="table" style="color:black">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CODIGOPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NOMBREPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DESCRIPCIONPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.STOCKPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PVPPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CATEGORIAPRODUCTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FOTOPRODUCTO)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CODIGOPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBREPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DESCRIPCIONPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.STOCKPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PVPPRODUCTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CATEGORIAPRODUCTO)
+                    </td>
+                    <td>
+                        <img src="@item.FOTOPRODUCTO" width="100" height="100">
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="container">
+        @if (pager.iPaginasTotales > 0)
+        {
+            <ul class="pagination justify-content-end">
+                @if (pager.iPaginaActual > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="PRODUCTO" asp-action="Invente" asp-route-pg="1">Primera</a>
+                    </li>
+                    <li>
+                        <a class="page-link" asp-controller="PRODUCTO" asp-action="Invente" asp-route-pg="@(pager.iPaginaActual-1)">Anterior</a>
+                    </li>
+
+                }
+                @for (var pge = pager.iPaginaInicio; pge <= pager.iPaginaFinal; pge++)
+                {
+                    <li class="page-item @(pge == pager.iPaginaActual ? "active" : "")">
+                        <a class="page-link" asp-controller="PRODUCTO" asp-action="Invente" asp-route-pg="@pge">@pge</a>
+                    </li>
+                }
+                @if (pager.iPaginaActual < pager.iPaginasTotales)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="PRODUCTO" asp-action="Invente" asp-route-pg="@(pager.iPaginaActual + 1)">Siguiente</a>
+                    </li>
+                    <li>
+                        <a class="page-link" asp-controller="PRODUCTO" asp-action="Invente" asp-route-pg="@(pager.iPaginasTotales)">Última</a>
+                    </li>
+                }
+
+            </ul>
+        }
+    </div>
+</div>
+
+<script src="~/js/opcionesSelectProduto.js"></script>

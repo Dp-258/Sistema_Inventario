@@ -1,28 +1,23 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Bienvenido a";
 }
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 <link rel="stylesheet" href="~/css/estiloHome.css">
 @if (SignInManager.IsSignedIn(User)){
-<script>
-    var elemento = document.getElementById("header_nav");
-    elemento.remove();
-</script>
-<div class="encabezado-titulo" style="align-items:center;">
-    <h1>Sistema de Inventario</h1>
+    <script>
+        var elemento = document.getElementById("header_nav");
+        elemento.remove();
+    </script>
+<div  style="align-items:center; height:4rem;">
+        <h1 class="encabezado-titulo">Sistema de Inventario</h1>
 </div>
 <div class="mover">
-    <!-- cambio lugar -->
-    <br />
-    <br />
-    <br />
     <br />
     <div class="top-row">
-
         <a asp-area="" asp-controller="ENTRADA" asp-action="Index" class="hexagon"><i class="fa-solid fa-arrow-down-long fa-5x" style="color: #000000;"></i>ENTRADAS</a>
-        <a asp-area="" asp-controller="PRODUCTO" asp-action="Index" class="hexagon"><i class="fa-solid fa-cart-flatbed fa-5x" style="color: #000000;"></i>INVENTARIO</a>      
+            <a asp-area="" asp-controller="PRODUCTO" asp-action="Invente" class="hexagon"><i class="fa-solid fa-cart-flatbed fa-5x" style="color: #000000;"></i>INVENTARIO</a>
         <a asp-area="" asp-controller="SALIDA" asp-action="Index" class="hexagon"><i class="fa-solid fa-arrow-up fa-5x" style="color: #000000;"></i>SALIDAS</a>
     </div>
     <div class="bottom-row">
@@ -31,18 +26,38 @@
         <a asp-area="" asp-controller="PROVEEDOR" asp-action="Index" class="hexagon"><i class="fa-solid fa-truck-fast fa-5x" style="color: #000000;"></i>PROVEEDORES</a>
     </div>
 </div>
+<br />
+<br />
 }else{
+    
+    <div class="container-fluid">
+        <div class="row d_flex">
+            <div class="col-md-6">
+                <div style="text-align: center;">
+                    <h1 class="titulo"> <strong>¡Bienvenido a StockUp! </strong></h1>
+                    <br>
+                    <p style="font-size:larger;">
+                        StockUp te permite mantener un registro actualizado de tus productos.
+                        Lista tus productos y evita quedarte sin productos o recomprar alguno que ya tenías en stock. 
+                        Manten tu inventario ordenado y actualizado en tiempo real.
+                    </p>
+                    <br>
+                    <div>
+                        <button type="button" class="btn btn-primary ml-2" style="width:50%"> <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Iniciar Sesión</a></button>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div style="text-align: center;">
+                    <figure><img src="~/img/stockuplogo.png" style="width: 60%;" alt="#" /></figure>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         var elemento = document.getElementById("header_nav");
         elemento.remove();
     </script>
-    <header>
-        <h1>Sistema de inventario</h1>
-    </header>
-    <section>
-        <p>Bienvenido al sistema de inventario. Este sistema te permite mantener un registro actualizado de tus productos y servicios. Para poder acceder a las funciones de este sistema, es necesario iniciar sesión con tu cuenta.</p>
-    </section>
-    <footer>
-        <p>¡Gracias por utilizar nuestro sistema de inventario!</p>
-    </footer>
 }

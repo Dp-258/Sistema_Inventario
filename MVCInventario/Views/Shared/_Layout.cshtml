@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - InventarioWebApp</title>
+    <title>@ViewData["Title"] StockUp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/estilos.css">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="sidebar">
                     <ul class="menu">
-                        <li><a asp-area="" asp-controller="PRODUCTO" asp-action="Index">Inventario</a></li>
+                        <li><a asp-area="" asp-controller="PRODUCTO" asp-action="Invente">Inventario</a></li>
 
                         <li><a asp-area="" asp-controller="SALIDA" asp-action="Index">Salida</a></li>
                         <li><a asp-area="" asp-controller="ENTRADA" asp-action="Index">Entrada</a></li>
@@ -41,7 +41,10 @@
                 </div>
 
             </div>
-            <partial name="_LoginPartial" />
+            <div style="margin-left:auto">
+                <partial name="_LoginPartial" />
+
+            </div>
         </nav>
        
     </header>
@@ -55,11 +58,20 @@
         </div>
         
     </div>
+    <br />
+    <br />
     <script src="~/js/script.js"></script> <!-- Enlace al archivo JavaScript -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
+    <footer class="text-center text-lg-start" style="background-color: #344868;">
+        <!-- Copyright -->
+        <div class="text-center" style="background-color: #344868;">
+            <a class="text-white">Sistema de Inventario - StockUp 2023</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 </body>
 </html>

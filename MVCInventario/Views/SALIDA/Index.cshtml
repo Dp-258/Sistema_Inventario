@@ -15,24 +15,17 @@
     <a asp-action="Create" style="color:black" class="hexagoncli">Crear<i class="fa-solid fa-arrow-up fa-3x" style="color: #000000;"></i></a>
 </div>
 <br />
-<br />
-<br />
 <form asp-controller="SALIDA" asp-action="Index" method="get">
-    <p>
-        Busqueda por Nombre:
-        <select asp-for="Clientes" asp-items="Model.NomL">
-            <option value="">Todas los Clientes</option>
-        </select>
-    </p>
-    <p>
-        Busqueda por Producto:
-        <select asp-for="Productos" asp-items="Model.ProL">
-            <option value="">Todos los desarrolladores</option>
-        </select>
-    </p>
+    <p style="color: black; font-size:1.2em;">
+        Nombre del cliente:
+        <input name="CedString" type="text" asp-for="Clientes" id="search-input" placeholder="Ingrese el cliente">
+        <br /><br />
+        Ingrese la fecha:
+        <input name="CedString" type="date" asp-for="Salida" id="search-input" placeholder="Ingrese la fecha">
+        <br /><br />
 
-    <p>
-        <input type="submit" value="Buscar" />
+        <input type="submit" class="bg-primary text-white" value="Buscar" style="margin-left: 20px; background-color: #cdd0d1" />
+        <br />
     </p>
 </form>
 <table class="table">
@@ -84,3 +77,5 @@
         }
     </tbody>
 </table>
+<br />
+<br />

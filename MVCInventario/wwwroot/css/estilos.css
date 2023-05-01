@@ -150,3 +150,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+footer {
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

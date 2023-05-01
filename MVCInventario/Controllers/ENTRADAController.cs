@@ -227,14 +227,15 @@ namespace MVCInventario.Controllers
             {
                 return NotFound();
             }
-            
+
 
             if (producto.STOCKPRODUCTO < entrada.CANTIDADPENTRADA)
             {
-                //Arreglar esta cosa
-                
-                return RedirectToAction(nameof(Index));
+                // Si hay un error, muestra una ventana emergente con el mensaje de error
+                TempData["ErrorMessage"] = "No se puede eliminar la entrada debido a que el producto no tiene suficiente stock.";
 
+                // Retorna a la vista anterior
+                return RedirectToAction("Delete");
             }
             else
             {

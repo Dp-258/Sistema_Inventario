@@ -180,5 +180,26 @@ namespace MVCInventario.Controllers
         {
             return _context.PRODUCTO.Any(e => e.id == id);
         }
+
+        public IActionResult Invente(int pg = 1)
+        {
+            List<PRODUCTO> Productos = _context.PRODUCTO.ToList();
+
+            const int TamanoPagina = 5;
+            if (pg < 1)
+                pg = 1;
+
+            int recsCont = Productos.Count();
+
+            var pager = new Pager(recsCont, pg, TamanoPagina);
+
+            int recSkip = (pg - 1) * TamanoPagina;
+
+            var data = Productos.Skip(recSkip).Take(pager.iTamanoPagina).ToList();
+
+            this.ViewBag.Pager = pager;
+
+            return View(data);
+        }
     }
 }

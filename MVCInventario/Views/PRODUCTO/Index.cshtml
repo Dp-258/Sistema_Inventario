@@ -13,21 +13,7 @@
 <div class="text-center separacion">
     <a asp-action="Create" style="color:black" class="hexagoncli">Crear <i class="fa-solid fa-boxes-stacked fa-4x" style="color: #000000;"></i></a>
 </div>
-<form>
-    <div class="search-container">
-        <label for="search-input" style="color: black; font-size:1.5em;">Buscar por</label>
-        <select class="form-select" id="selectProducto" style="margin-right:15px">
-            <option value="1" selected disabled>Seleccione una opción</option>
-            <option value="1">Código</option>
-            <option value="2">Nombre</option>
-            <option value="3">Categoría</option>
-        </select>
-        <div id="opcionProducto">
-        </div>
-        <input id="btnBuscarPro" class="bg-primary text-white" style="margin-left: 20px; background-color: #cdd0d1" type="submit" value="Buscar Todos" />
-    </div>
-
-</form>
+<br>
 <div class="contenedortable separacion">
     <table class="table" style="color:black">
         <thead>
@@ -41,7 +27,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Productos[0].DESCRIPCIONPRODUCTO)
                 </th>
-                <th>
+                <th hidden>
                     @Html.DisplayNameFor(model => model.Productos[0].STOCKPRODUCTO)
                 </th>
                 <th>
@@ -69,7 +55,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.DESCRIPCIONPRODUCTO)
                     </td>
-                    <td>
+                    <td hidden>
                         @Html.DisplayFor(modelItem => item.STOCKPRODUCTO)
                     </td>
                     <td>

@@ -20,7 +20,7 @@ using MVCInventario.Models;
 
 namespace MVCInventario.Areas.Identity.Pages.Account
 {
-    [Authorize(Roles = "Jefe")]
+    //[Authorize(Roles = "Jefe")]
     
     public class RegisterModel : PageModel
     {
