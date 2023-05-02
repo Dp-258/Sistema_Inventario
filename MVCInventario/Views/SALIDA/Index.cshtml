@@ -18,10 +18,10 @@
 <form asp-controller="SALIDA" asp-action="Index" method="get">
     <p style="color: black; font-size:1.2em;">
         Nombre del cliente:
-        <input name="CedString" type="text" asp-for="Clientes" id="search-input" placeholder="Ingrese el cliente">
+        <input name="ClienteSearchString" type="text" asp-for="ClienteSearchString" id="search-input" placeholder="Ingrese el cliente">
         <br /><br />
         Ingrese la fecha:
-        <input name="CedString" type="date" asp-for="Salida" id="search-input" placeholder="Ingrese la fecha">
+        <input name="FechaSearchString" type="date" asp-for="FechaSearchString" id="search-input" placeholder="Ingrese la fecha">
         <br /><br />
 
         <input type="submit" class="bg-primary text-white" value="Buscar" style="margin-left: 20px; background-color: #cdd0d1" />
@@ -79,3 +79,9 @@
 </table>
 <br />
 <br />
+@if (TempData["ErrorMessage"] != null)
+{
+    <script>
+        alert("@TempData["ErrorMessage"]");
+    </script>
+}

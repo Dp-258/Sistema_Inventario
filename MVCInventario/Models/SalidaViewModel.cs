@@ -6,16 +6,16 @@ namespace MVCInventario.Models
    
         public class SalidaViewModel
         {
+            public int Id { get; set; }
             public List<SALIDA> Salidas { get; set; }
             public SALIDA Salida { get; set; }
 
         //CATEGORIAS
             public SelectList NomL { get; set; }
             public SelectList ProL { get; set; }
-            public string Clientes { get; set; }
-            public string Productos { get; set; }
-
-            public int Id { get; set; }
+        //BUSQUEDAS
+            public string ClienteSearchString { get; set; }
+            public string FechaSearchString { get; set; }
 
             public PRODUCTO Producto{ get; set; }
 

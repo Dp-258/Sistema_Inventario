@@ -49,6 +49,12 @@
             <a asp-action="Index">Cancelar</a>
         </div>
     </div>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <script>
+            alert("@TempData["ErrorMessage"]");
+        </script>
+    }
 </div>
 <script>
     function validarCampoTexto() {

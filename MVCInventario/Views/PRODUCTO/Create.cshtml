@@ -58,6 +58,12 @@
             <a asp-action="Index">Volver al listado</a>
         </div>
     </div>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <script>
+            alert("@TempData["ErrorMessage"]");
+        </script>
+    }
 </div>
 <script>
     const fileInput = document.getElementById("inputFile");

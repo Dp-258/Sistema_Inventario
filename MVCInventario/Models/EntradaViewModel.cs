@@ -8,13 +8,14 @@ namespace MVCInventario.Models
         public List<ENTRADA> Entradas { get; set; }
         public ENTRADA Entrada { get; set; }
 
+
         //Lista de categorias
         public SelectList ListaProveedores { get; set; }
         public SelectList ListaProductos { get; set; }
 
-        public string SearchString { get; set; }
-        public string Proveedores { get; set; }
-        public string Productos { get; set; }
+        //BUSQUEDAS
+        public string ProveedorSearchString { get; set; }
+        public string FechaSearchString { get; set; }
         
         
         public int Id { get; set; }

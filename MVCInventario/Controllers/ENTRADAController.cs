@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using MVCInventario.Data;
 using MVCInventario.Models;
 
@@ -27,36 +28,39 @@ namespace MVCInventario.Controllers
         public async Task<IActionResult> Index(EntradaViewModel model)
         {
             var entrada = _context.ENTRADA.Select(p => p);
+            bool busqueda = false;
           
-            if (!string.IsNullOrEmpty(model.Proveedores))
+            if (!string.IsNullOrEmpty(model.ProveedorSearchString))
             {
-                PROVEEDOR provTemp = await _context.PROVEEDOR.Where(p => p.NOMBREPROVEEDOR == model.Proveedores).SingleOrDefaultAsync();
+                var provTemp = await _context.PROVEEDOR.Where(p => p.NOMBREPROVEEDOR.Contains(model.ProveedorSearchString)).ToListAsync();
                 if (provTemp != null)
                 {
-                    entrada = entrada.Where(p => p.IDPROVEEDOR == provTemp.Id);
+                    var provIds = provTemp.Select(p => p.Id).ToList();
+                    entrada = entrada.Where(p => provIds.Contains(p.IDPROVEEDOR));
+                    busqueda = true;
                 }
             }
+            if (!string.IsNullOrEmpty(model.FechaSearchString))
+            {
+                DateTime fechaBusqueda = DateTime.Parse(model.FechaSearchString);
+                entrada = entrada.Where(p => p.FECHAREGISTROENTRADA == fechaBusqueda);
+                busqueda = true;
+            }
+
             model.ListaProveedores = new SelectList(_context.PROVEEDOR.OrderBy(p => p.NOMBREPROVEEDOR).Select(p => p.NOMBREPROVEEDOR));
-            if (!string.IsNullOrEmpty(model.Productos))
-            {
-                PRODUCTO provTemp = await _context.PRODUCTO.Where(p => p.NOMBREPRODUCTO == model.Productos).SingleOrDefaultAsync();
-                if (provTemp != null)
-                {
-                    entrada = entrada.Where(p => p.IDPRODUCTO == provTemp.id);
-                }
-            }
             model.ListaProductos = new SelectList(_context.PRODUCTO.OrderBy(p => p.NOMBREPRODUCTO).Select(p => p.NOMBREPRODUCTO));
 
+            if (!entrada.Any() && busqueda)
+            {
+                TempData["ErrorMessage"] = "No existe una entrada con estos datos.";
+                entrada = _context.ENTRADA.Select(p => p);
+            }
             foreach (var item in entrada)
             {
                 PROVEEDOR provTemp = await _context.PROVEEDOR.Where(p => p.Id == item.IDPROVEEDOR).SingleOrDefaultAsync();
                 item.proveedor = provTemp.NOMBREPROVEEDOR;
-
-
                 PRODUCTO provTemp1 = await _context.PRODUCTO.Where(p => p.id == item.IDPRODUCTO).SingleOrDefaultAsync();
                 item.producto = provTemp1.NOMBREPRODUCTO;
-
-               
             }
             model.Entradas = await entrada.ToListAsync();
             return View(model);

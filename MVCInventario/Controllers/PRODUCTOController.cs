@@ -83,11 +83,23 @@ namespace MVCInventario.Controllers
         {
             if (ModelState.IsValid)
             {
-                
-                _context.Add(pRODUCTO);
-                pRODUCTO.STOCKPRODUCTO = 0;
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                PRODUCTO val = await _context.PRODUCTO
+                        .SingleOrDefaultAsync(p => p.CODIGOPRODUCTO == pRODUCTO.CODIGOPRODUCTO);
+                if (val == null)
+                {
+                    _context.Add(pRODUCTO);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    // Si hay un error, muestra una ventana emergente con el mensaje de error
+                    TempData["ErrorMessage"] = "No se puede crear el producto, debido a que ya existe un producto con esta clave.";
+                    // Retorna a la vista anterior
+                    return RedirectToAction("Create");
+                }
+
+
             }
             return View(pRODUCTO);
         }
@@ -124,23 +136,35 @@ namespace MVCInventario.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(pRODUCTO);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PRODUCTOExists(pRODUCTO.id))
+                var val = await _context.PRODUCTO.AsNoTracking()
+                        .Where(p => p.CODIGOPRODUCTO == pRODUCTO.CODIGOPRODUCTO && p.id!= pRODUCTO.id).ToListAsync();
+                if (val.Count == 0)
+                { 
+                        try
                     {
-                        return NotFound();
+                        _context.Update(pRODUCTO);
+                        await _context.SaveChangesAsync();
                     }
-                    else
+                    catch (DbUpdateConcurrencyException)
                     {
-                        throw;
+                        if (!PRODUCTOExists(pRODUCTO.id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
                     }
+                    return RedirectToAction(nameof(Index));
                 }
-                return RedirectToAction(nameof(Index));
+                else
+                {
+                    // Si hay un error, muestra una ventana emergente con el mensaje de error
+                    TempData["ErrorMessage"] = "No se puede editar el producto, debido a que ya existe un producto con esta clave.";
+                    // Retorna a la vista anterior
+                    return RedirectToAction("Edit");
+                }
             }
             return View(pRODUCTO);
         }
@@ -170,9 +194,21 @@ namespace MVCInventario.Controllers
         [Authorize(Roles = "Jefe")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var pRODUCTO = await _context.PRODUCTO.FindAsync(id);
-            _context.PRODUCTO.Remove(pRODUCTO);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var pRODUCTO = await _context.PRODUCTO.FindAsync(id);
+                _context.PRODUCTO.Remove(pRODUCTO);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                string errorMessage = "No se puede eliminar el producto, debido a que se encuentra siendo utilizado en otra tabla.";
+                TempData["ErrorMessage"] = errorMessage;
+                // Retorna a la vista anterior
+                return RedirectToAction("Delete");
+            }
+
+
             return RedirectToAction(nameof(Index));
         }
 

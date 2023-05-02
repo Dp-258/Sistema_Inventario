@@ -27,26 +27,32 @@ namespace MVCInventario.Controllers
         public async Task<IActionResult> Index(SalidaViewModel model)
         {
             var salida = _context.SALIDA.Select(p => p);
+            bool busqueda = false;
 
-            if (!string.IsNullOrEmpty(model.Clientes))
+            if (!string.IsNullOrEmpty(model.ClienteSearchString))
             {
-                CLIENTE CLiTemp = await _context.CLIENTE.Where(p => p.NOMBRECLIENTE == model.Clientes).SingleOrDefaultAsync();
-                if (CLiTemp != null)
+                var cliTemp = await _context.CLIENTE.Where(p => p.NOMBRECLIENTE.Contains(model.ClienteSearchString)).ToListAsync();
+                if (cliTemp != null)
                 {
-                    salida = salida.Where(p => p.IDCLIENTE == CLiTemp.Id);
+                    var cliIds = cliTemp.Select(p => p.Id).ToList();
+                    salida = salida.Where(p => cliIds.Contains(p.IDCLIENTE));
+                    busqueda = true;
                 }
+            }
+            if (!string.IsNullOrEmpty(model.FechaSearchString))
+            {
+                DateTime fechaBusqueda = DateTime.Parse(model.FechaSearchString);
+                salida = salida.Where(p => p.FECHAREGISTROSALIDA == fechaBusqueda);
+                busqueda = true;    
             }
             model.NomL = new SelectList(_context.CLIENTE.OrderBy(p => p.NOMBRECLIENTE).Select(p => p.NOMBRECLIENTE));
-            if (!string.IsNullOrEmpty(model.Productos))
-            {
-                PRODUCTO proTemp = await _context.PRODUCTO.Where(p => p.NOMBREPRODUCTO == model.Productos).SingleOrDefaultAsync();
-                if (proTemp != null)
-                {
-                    salida = salida.Where(p => p.IDPRODUCTO == proTemp.id);
-                }
-            }
             model.ProL = new SelectList(_context.PRODUCTO.OrderBy(p => p.NOMBREPRODUCTO).Select(p => p.NOMBREPRODUCTO));
 
+            if (!salida.Any() && busqueda)
+            {
+                TempData["ErrorMessage"] = "No existe una salida con estos datos.";
+                salida = _context.SALIDA.Select(p => p);
+            }
             foreach (var item in salida)
             {
                 CLIENTE cliTemp = await _context.CLIENTE.Where(p => p.Id == item.IDCLIENTE).SingleOrDefaultAsync();

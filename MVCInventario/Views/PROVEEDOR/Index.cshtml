@@ -73,5 +73,11 @@
     }
         </tbody>
     </table>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <script>
+            alert("@TempData["ErrorMessage"]");
+        </script>
+    }
 </div>
 <script src="~/js/opcionesSelectProveedor.js"></script>
