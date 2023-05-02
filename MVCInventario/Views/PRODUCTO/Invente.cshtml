@@ -35,6 +35,7 @@
         </div>
     </form>
 </div>
+
 <br />
 <br />
 
@@ -132,6 +133,12 @@
             </ul>
         }
     </div>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <script>
+            alert("@TempData["ErrorMessage"]");
+        </script>
+    }
 </div>
 
 <script src="~/js/opcionesSelectProduto.js"></script>

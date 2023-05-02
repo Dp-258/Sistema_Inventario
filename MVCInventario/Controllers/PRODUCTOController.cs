@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCInventario.Data;
 using MVCInventario.Models;
+using MVCInventario.Views.Shared.Components.Buscador;
 
 namespace MVCInventario.Controllers
 {
@@ -217,9 +218,23 @@ namespace MVCInventario.Controllers
             return _context.PRODUCTO.Any(e => e.id == id);
         }
 
-        public IActionResult Invente(int pg = 1)
+        public IActionResult Invente(string ParametroBusc = "", int pg = 1)
         {
-            List<PRODUCTO> Productos = _context.PRODUCTO.ToList();
+            List<PRODUCTO> Productos;
+            bool busqueda = false;
+            if (ParametroBusc != "" && ParametroBusc != null)
+            {
+                Productos = _context.PRODUCTO.Where(p => p.CODIGOPRODUCTO.Contains(ParametroBusc)).ToList();
+                busqueda = true;
+            }
+            else
+                Productos = _context.PRODUCTO.ToList();
+
+            if (!Productos.Any() && busqueda)
+            {
+                TempData["ErrorMessage"] = "No existe un producto con estos datos.";
+                Productos = _context.PRODUCTO.ToList();
+            }
 
             const int TamanoPagina = 5;
             if (pg < 1)
@@ -231,11 +246,15 @@ namespace MVCInventario.Controllers
 
             int recSkip = (pg - 1) * TamanoPagina;
 
-            var data = Productos.Skip(recSkip).Take(pager.iTamanoPagina).ToList();
+            List<PRODUCTO> retProductos = Productos.Skip(recSkip).Take(pager.iTamanoPagina).ToList();
 
             this.ViewBag.Pager = pager;
 
-            return View(data);
+            SPager SearchPager = new SPager() { Accion = "Invente", Controlador = "PRODUCTO", TextoBusqueda = "ParametroBusc" };
+
+            ViewBag.SearchPager = SearchPager;
+
+            return View(retProductos);
         }
     }
 }

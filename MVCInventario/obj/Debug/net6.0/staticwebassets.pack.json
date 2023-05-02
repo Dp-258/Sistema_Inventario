@@ -1,203 +1,203 @@
 {
   "Files": [
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\Clientes.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\Clientes.css",
       "PackagePath": "staticwebassets\\css\\Clientes.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\Proveedores.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\Proveedores.css",
       "PackagePath": "staticwebassets\\css\\Proveedores.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\estiloHome.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\estiloHome.css",
       "PackagePath": "staticwebassets\\css\\estiloHome.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\estilos.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\estilos.css",
       "PackagePath": "staticwebassets\\css\\estilos.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\loginStyle.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\loginStyle.css",
       "PackagePath": "staticwebassets\\css\\loginStyle.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\img\\stockUpLogo.png",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\img\\stockUpLogo.png",
       "PackagePath": "staticwebassets\\img\\stockUpLogo.png"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\esconder_nav.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\esconder_nav.js",
       "PackagePath": "staticwebassets\\js\\esconder_nav.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\nav.json",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\nav.json",
       "PackagePath": "staticwebassets\\js\\nav.json"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectCliente.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectCliente.js",
       "PackagePath": "staticwebassets\\js\\opcionesSelectCliente.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectEntradas.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectEntradas.js",
       "PackagePath": "staticwebassets\\js\\opcionesSelectEntradas.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectProduto.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectProduto.js",
       "PackagePath": "staticwebassets\\js\\opcionesSelectProduto.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectProveedor.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectProveedor.js",
       "PackagePath": "staticwebassets\\js\\opcionesSelectProveedor.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\script.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\validacionCedula.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\validacionCedula.js",
       "PackagePath": "staticwebassets\\js\\validacionCedula.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\MVC_inventario\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\User\\Desktop\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

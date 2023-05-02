@@ -48,17 +48,21 @@ function validarCampo(campoTexto) {
 }
 
 function validarCedula(cedula) {
-    const provincia = Number(cedula.substring(0, 2));
-    if (provincia < 1 || provincia > 24) {
-        return false;
+    if (typeof (cedula) == 'string' && cedula.length == 10 && /^\d+$/.test(cedula)) {
+        var digitos = cedula.split('').map(Number);
+        var codigo_provincia = digitos[0] * 10 + digitos[1];
+
+        //if (codigo_provincia >= 1 && (codigo_provincia <= 24 || codigo_provincia == 30) && digitos[2] < 6) {
+
+        if (codigo_provincia >= 1 && (codigo_provincia <= 24 || codigo_provincia == 30)) {
+            var digito_verificador = digitos.pop();
+
+            var digito_calculado = digitos.reduce(
+                function (valorPrevio, valorActual, indice) {
+                    return valorPrevio - (valorActual * (2 - indice % 2)) % 9 - (valorActual == 9) * 9;
+                }, 1000) % 10;
+            return digito_calculado === digito_verificador;
+        }
     }
-    const ultimoDigito = Number(cedula.substring(9, 10));
-    const coeficientes = [2, 1, 2, 1, 2, 1, 2, 1, 2];
-    let suma = 0;
-    for (let i = 0; i < coeficientes.length; i++) {
-        const producto = coeficientes[i] * Number(cedula.charAt(i));
-        suma += producto >= 10 ? producto - 9 : producto;
-    }
-    const digitoVerificador = 10 - (suma % 10);
-    return ultimoDigito === digitoVerificador;
+    return false;
 }

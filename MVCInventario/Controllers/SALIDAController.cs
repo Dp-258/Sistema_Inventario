@@ -115,8 +115,8 @@ namespace MVCInventario.Controllers
                 PRODUCTO prod = await _context.PRODUCTO.Where(p => p.id == model.Salida.IDPRODUCTO).SingleOrDefaultAsync();
 
 
-                if (prod.STOCKPRODUCTO<=0) {
-                    //Arreglar esta cosa
+                if (prod.STOCKPRODUCTO <= 0 || prod.STOCKPRODUCTO < model.Salida.CANTIDADSALIDA)
+                {
                     ModelState.AddModelError("", "La cantidad de la salida no puede hacer que el stock sea negativo.");
                     model.NomL = new SelectList(_context.CLIENTE.ToList(), "Id", "NOMBRECLIENTE");
                     model.ProL = new SelectList(_context.PRODUCTO.ToList(), "id", "NOMBREPRODUCTO");
@@ -126,13 +126,13 @@ namespace MVCInventario.Controllers
 
                 else
                 {
-                model.Salida.MONTOTOTALSALIDA = (model.Salida.CANTIDADSALIDA * prod.PVPPRODUCTO);
+                    model.Salida.MONTOTOTALSALIDA = (model.Salida.CANTIDADSALIDA * prod.PVPPRODUCTO);
                     prod.STOCKPRODUCTO -= model.Salida.CANTIDADSALIDA;
                     _context.Update(prod);
 
-                _context.Add(model.Salida);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                    _context.Add(model.Salida);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
             }
             return View(model.Salida);
