@@ -21,15 +21,24 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Salida.IDCLIENTE" class="control-label"></label>
-                <select asp-for="Salida.IDCLIENTE" asp-items="Model.NomL" class="form-control"></select>
+                <label asp-for="Salida.IDCLIENTE" class="control-label">Cédula del cliente</label>
+                <!--<select asp-for="Salida.IDCLIENTE" asp-items="Model.NomL" class="form-control"></select>-->
+                <input id="codCli" type="text" class="form-control" maxlength="10" />
+                <div id="cli-info">
+                    <p style="color:#727581"><span id="name"></span></p>
+                </div>
+                <input asp-for="Salida.IDCLIENTE" id="id-cli" class="form-control" hidden />
                 <span asp-validation-for="Salida.IDCLIENTE" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Salida.IDPRODUCTO" class="control-label"></label>
-                <select asp-for="Salida.IDPRODUCTO" asp-items="Model.ProL" class="form-control">
-                </select>
+                <label asp-for="Salida.IDPRODUCTO" class="control-label">Código del producto</label>
+                <!--<select asp-for="Salida.IDPRODUCTO" asp-items="Model.ProL" class="form-control"></select>-->
+                <input id="codProd" type="text" class="form-control" maxlength="10" />
+                <div id="prod-info">
+                    <p style="color:#727581"><span id="nameprod"></span></p>
+                </div>
+                <input asp-for="Salida.IDPRODUCTO" id="id-prod" class="form-control" hidden />
                 <span asp-validation-for="Salida.IDPRODUCTO" class="text-danger"></span>
             </div>
 
@@ -56,6 +65,12 @@
             <a asp-action="Index">Regresar</a>
         </div>
     </div>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <script>
+            alert("@TempData["ErrorMessage"]");
+        </script>
+    }
 </div>
 
 
@@ -63,4 +78,42 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        $('#codCli').on('change', function () {
+            var id = $(this).val();
+            $.ajax({
+                url: '@Url.Action("GetCliInfo", "SALIDA")',
+                data: { id: id },
+                success: function (result) {
+                    if (result) {
+                        $('#id-cli').val(result.id);
+                        $('#name').text(result.name);
+                        $('#cli-info').show();
+                    } else {
+                        $('#id-cli').val(0);
+                        $('#name').text("No se encontró este cliente");
+                        $('#cli-info').show();
+                    }
+                }
+            });
+        });
+        $('#codProd').on('change', function () {
+            var id = $(this).val();
+            $.ajax({
+                url: '@Url.Action("GetProdInfo", "SALIDA")',
+                data: { id: id },
+                success: function (result) {
+                    if (result) {
+                        $('#id-prod').val(result.id);
+                        $('#nameprod').text(result.name);
+                        $('#prod-info').show();
+                    } else {
+                        $('#id-prod').val(0);
+                        $('#nameprod').text("No se encontró este producto");
+                        $('#prod-info').show();
+                    }
+                }
+            });
+        });
+    </script>
 }

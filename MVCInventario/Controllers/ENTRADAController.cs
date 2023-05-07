@@ -107,14 +107,16 @@ namespace MVCInventario.Controllers
         [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Create(string Idnouse, EntradaViewModel model)
         {
-
+            if (model.Entrada.IDPRODUCTO == 0 || model.Entrada.IDPROVEEDOR == 0)
+            {
+                TempData["ErrorMessage"] = "No se puede crear la entrada debido a que uno de los datos ingresados no existe.";
+                // Retorna a la vista anterior
+                return RedirectToAction("Create");
+            }
             if (ModelState.IsValid)
             {
 
                 PRODUCTO prod = await _context.PRODUCTO.Where(p => p.id== model.Entrada.IDPRODUCTO).SingleOrDefaultAsync();
-                
-
-                
                     model.Entrada.MONTOTOTALENTRADA = (model.Entrada.CANTIDADPENTRADA * prod.PVPPRODUCTO);
                     prod.STOCKPRODUCTO += model.Entrada.CANTIDADPENTRADA;
                     
@@ -159,7 +161,12 @@ namespace MVCInventario.Controllers
             {
                 return NotFound();
             }
-
+            if (model.Entrada.IDPRODUCTO == 0 || model.Entrada.IDPROVEEDOR == 0)
+            {
+                TempData["ErrorMessage"] = "No se puede editar la entrada debido a que uno de los datos ingresados no existe.";
+                // Retorna a la vista anterior
+                return RedirectToAction("Edit");
+            }
             if (ModelState.IsValid)
             {
                 try
@@ -257,6 +264,55 @@ namespace MVCInventario.Controllers
         private bool ENTRADAExists(int id)
         {
             return _context.ENTRADA.Any(e => e.id == id);
+        }
+
+        //CARGAR-PROVEEDOR
+        public IActionResult GetUserInfo(string id)
+        {
+            var user = _context.PROVEEDOR.FirstOrDefault(u => u.CEDULAPROVEEDOR == id);
+
+            if (user == null)
+            {
+                return Json(null);
+            }
+
+            return Json(new { name = user.NOMBREPROVEEDOR, id = user.Id });
+        }
+        //Mostrar-proveedor
+        public IActionResult LoadUserInfo(string id)
+        {
+            var user = _context.PROVEEDOR.FirstOrDefault(u => u.Id == Convert.ToInt32(id));
+
+            if (user == null)
+            {
+                return Json(null);
+            }
+
+            return Json(new { name = user.NOMBREPROVEEDOR, ced = user.CEDULAPROVEEDOR });
+        }
+        //CARGAR-PRODUCTO
+        public IActionResult GetProdInfo(string id)
+        {
+            var prod = _context.PRODUCTO.FirstOrDefault(u => u.CODIGOPRODUCTO == id);
+
+            if (prod == null)
+            {
+                return Json(null);
+            }
+
+            return Json(new { name = prod.NOMBREPRODUCTO, prod.id }); //AQUI SE PUSO EL ENVIO DIRECTO PORQUE EL NOMBRE ES IGUAL id = prod.id
+        }
+        //Mostrar-producto
+        public IActionResult LoadProdInfo(string idprod)
+        {
+            var user = _context.PRODUCTO.FirstOrDefault(u => u.id == Convert.ToInt32(idprod));
+
+            if (user == null)
+            {
+                return Json(null);
+            }
+
+            return Json(new { name = user.NOMBREPRODUCTO, ced = user.CODIGOPRODUCTO });
         }
     }
 }

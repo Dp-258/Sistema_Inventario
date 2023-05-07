@@ -20,12 +20,22 @@
             <input type="hidden" asp-for="Entrada.id" />
             <div class="form-group">
                 <label asp-for="Entrada.IDPROVEEDOR" class="control-label"></label>
-                <select asp-for="Entrada.IDPROVEEDOR" asp-items="Model.ListaProveedores" class="form-control" ></select>
+                <!-- select asp-for="Entrada.IDPROVEEDOR" asp-items="Model.ListaProveedores" class="form-control" ></select> -->
+                <input id="codProv" type="text" class="form-control" maxlength="13" />
+                <div id="prov-info">
+                    <p style="color:#727581"><span id="name"></span></p>
+                </div>
+                <input asp-for="Entrada.IDPROVEEDOR" id="id-prov" class="form-control" hidden />
                 <span asp-validation-for="Entrada.IDPROVEEDOR" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Entrada.IDPRODUCTO" class="control-label"></label>
-                <select asp-for="Entrada.IDPRODUCTO" asp-items="Model.ListaProductos" class="form-control" ></select>
+                <!--<select asp-for="Entrada.IDPRODUCTO" asp-items="Model.ListaProductos" class="form-control"></select> -->
+                <input id="codProd" type="text" class="form-control" maxlength="10"/>
+                <div id="prod-info">
+                    <p style="color:#727581"><span id="nameprod"></span></p>
+                </div>
+                <input asp-for="Entrada.IDPRODUCTO" id="id-prod" class="form-control" hidden />
                 <span asp-validation-for="Entrada.IDPRODUCTO" class="text-danger"></span>
             </div>
             <div class="form-group" hidden>
@@ -51,10 +61,88 @@
             <a asp-action="Index">Cancelar</a>
         </div>
     </div>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <script>
+            alert("@TempData["ErrorMessage"]");
+        </script>
+    }
 </div>
 
 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(window).on('load', function () {
+            var id = $('#id-prov').val();
+            var idprod = $('#id-prod').val();
+            $.ajax({
+                url: '@Url.Action("LoadUserInfo", "ENTRADA")',
+                data: { id: id },
+                success: function (result) {
+                    if (result) {
+                        $('#codProv').val(result.ced);
+                        $('#name').text(result.name);
+                        $('#prov-info').show();
+                    } else {
+                        $('#codProv').val(0);
+                        $('#name').text("No se encontró este proveedor");
+                        $('#prov-info').show();
+                    }
+                }
+            });
+            $.ajax({
+                url: '@Url.Action("LoadProdInfo", "ENTRADA")',
+                data: { idprod: idprod },
+                success: function (result) {
+                    if (result) {
+                        $('#codProd').val(result.ced);
+                        $('#nameprod').text(result.name);
+                        $('#prod-infoo').show();
+                    } else {
+                        $('#codProd').val(0);
+                        $('#nameprod').text("No se encontró este producto");
+                        $('#pros-info').show();
+                    }
+                }
+            });
+        });
+        $('#codProv').on('change', function () {
+            var id = $(this).val();
+            $.ajax({
+                url: '@Url.Action("GetUserInfo", "ENTRADA")',
+                data: { id: id },
+                success: function (result) {
+                    if (result) {
+                        $('#id-prov').val(result.id);
+                        $('#name').text(result.name);
+                        $('#prov-info').show();
+                    } else {
+                        $('#id-prod').val(0);
+                        $('#name').text("No se encontró este proveedor");
+                        $('#prov-info').show();
+                    }
+                }
+            });
+        });
+        $('#codProd').on('change', function () {
+            var id = $(this).val();
+            $.ajax({
+                url: '@Url.Action("GetProdInfo", "ENTRADA")',
+                data: { id: id },
+                success: function (result) {
+                    if (result) {
+                        $('#id-prod').val(result.id);
+                        $('#nameprod').text(result.name);
+                        $('#prod-info').show();
+                    } else {
+                        $('#id-prod').val(0);
+                        $('#nameprod').text("No se encontró este producto");
+                        $('#prod-info').show();
+                    }
+                }
+            });
+        });
+    </script>
 }

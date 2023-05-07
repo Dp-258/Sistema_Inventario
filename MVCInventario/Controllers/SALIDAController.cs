@@ -108,7 +108,12 @@ namespace MVCInventario.Controllers
         [Authorize(Roles = "Jefe, Operador")]
         public async Task<IActionResult> Create(string Idnouse, SalidaViewModel model)
         {
-
+            if (model.Salida.IDCLIENTE == 0 || model.Salida.IDPRODUCTO == 0)
+            {
+                TempData["ErrorMessage"] = "No se puede editar la salida debido a que uno de los datos ingresados no existe.";
+                // Retorna a la vista anterior
+                return RedirectToAction("Create");
+            }
             if (ModelState.IsValid)
             {
 
@@ -268,6 +273,55 @@ namespace MVCInventario.Controllers
         private bool SALIDAExists(int id)
         {
             return _context.SALIDA.Any(e => e.id == id);
+        }
+
+        //CARGAR-CLEINTE
+        public IActionResult GetCliInfo(string id)
+        {
+            var user = _context.CLIENTE.FirstOrDefault(u => u.CEDULACLIENTE == id);
+
+            if (user == null)
+            {
+                return Json(null);
+            }
+
+            return Json(new { name = user.NOMBRECLIENTE, id = user.Id });
+        }
+        //Mostrar-Cliente
+        public IActionResult LoadCliInfo(string id)
+        {
+            var user = _context.CLIENTE.FirstOrDefault(u => u.Id == Convert.ToInt32(id));
+
+            if (user == null)
+            {
+                return Json(null);
+            }
+
+            return Json(new { name = user.NOMBRECLIENTE, ced = user.CEDULACLIENTE });
+        }
+        //CARGAR-PRODUCTO
+        public IActionResult GetProdInfo(string id)
+        {
+            var prod = _context.PRODUCTO.FirstOrDefault(u => u.CODIGOPRODUCTO == id);
+
+            if (prod == null)
+            {
+                return Json(null);
+            }
+
+            return Json(new { name = prod.NOMBREPRODUCTO, prod.id }); //AQUI SE PUSO EL ENVIO DIRECTO PORQUE EL NOMBRE ES IGUAL id = prod.id
+        }
+        //Mostrar-producto
+        public IActionResult LoadProdInfo(string idprod)
+        {
+            var user = _context.PRODUCTO.FirstOrDefault(u => u.id == Convert.ToInt32(idprod));
+
+            if (user == null)
+            {
+                return Json(null);
+            }
+
+            return Json(new { name = user.NOMBREPRODUCTO, ced = user.CODIGOPRODUCTO });
         }
     }
 }
