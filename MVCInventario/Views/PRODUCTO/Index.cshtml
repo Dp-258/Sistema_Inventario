@@ -6,7 +6,44 @@
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Clientes.css">
-    <script src="~/js/opcionesSelectProducto.js"></script>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
 </head>
 
 <h1 class="titulo separacion" style="color:black; text-align:center">PRODUCTOS</h1>
@@ -67,14 +104,63 @@
                     <td>
                         <img src="@item.FOTOPRODUCTO" width="100" height="100">
                     </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
-                        <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
-                        <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
-                    </td>
+                    @if (User.IsInRole("Jefe"))
+                    {
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                            <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
+                            <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a> |
+                            <a href="#" onclick="showBarcodeModal(@item.CODIGOPRODUCTO)">Generar Código de Barras</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
+                            <a href="#" onclick="showBarcodeModal(@item.CODIGOPRODUCTO)">Generar Código de Barras</a>
+
+                        </td>
+
+                    }
                 </tr>
             }
         </tbody>
     </table>
+    <div id="barcodeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideBarcodeModal()">&times;</span>
+            <h1 id="nombreProducto"></h1>
+            <img id="barcode" src="" alt="Código de barras">
+        </div>
+    </div>
 </div>
-<script src="~/js/opcionesSelectProduto.js"></script>
+<script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+<script>
+    function showBarcodeModal(code) {
+        document.getElementById("barcodeModal").style.display = "block";
+        generateBarcode(code);
+    }
+
+    function hideBarcodeModal() {
+        document.getElementById("barcodeModal").style.display = "none";
+    }
+
+    function generateBarcode(code) {
+        var barcodeValue = code.toString().padStart(10, "0"); // Agrega ceros a la izquierda si es necesario
+        JsBarcode("#barcode", barcodeValue, {
+            format: "CODE128",
+            displayValue: true,
+            fontSize: 30,
+            textMargin: 10
+        });
+        var barcodeImage = document.getElementById("barcode");
+        barcodeImage.style.display = "block";
+        var downloadLink = document.createElement("a");
+        downloadLink.href = barcodeImage.src;
+        downloadLink.download = barcodeValue + ".png";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        document.getElementById("barcodeValue").value = ""; // Limpiar el textbox
+    }
+</script>

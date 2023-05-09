@@ -45,10 +45,19 @@
             @Html.DisplayFor(model => model.MONTOTOTALENTRADA)
         </dd>
     </dl>
-        <div>
-            <a asp-action="Edit" asp-route-id="@Model.id">Editar</a> |
-            <a asp-action="Index">Volver a la lista</a>
-        </div>
+        @if (User.IsInRole("Jefe"))
+        {
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.id">Editar</a> |
+                <a asp-action="Index">Volver a la lista</a>
+            </div>
+        }
+        else
+        {
+            <div>
+                <a asp-action="Index">Volver a la lista</a>
+            </div>
+        }
         <br/>
 </div>
 </div>

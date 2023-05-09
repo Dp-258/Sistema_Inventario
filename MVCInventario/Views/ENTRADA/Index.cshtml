@@ -1,4 +1,8 @@
-﻿@model MVCInventario.Models.EntradaViewModel
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@model MVCInventario.Models.EntradaViewModel
 @{
     ViewData["Title"] = "Entrada -";
 }
@@ -65,11 +69,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.MONTOTOTALENTRADA)
             </td>
+                @if (User.IsInRole("Jefe")){
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
                 <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
-                    <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
+                <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
             </td>
+                }else{
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.id">Detalles</a> 
+                    </td>
+
+                }
         </tr>
 }
     </tbody>

@@ -64,11 +64,21 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.CIUDADPROVEEDOR)
                 </td>
-                <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Detalle</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
-                </td>
+                    @if (User.IsInRole("Jefe"))
+                    {
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.Id">Detalles</a>
+                        </td>
+
+                    }
             </tr>
     }
         </tbody>

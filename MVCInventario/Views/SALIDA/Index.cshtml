@@ -68,11 +68,21 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.MONTOTOTALSALIDA)
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
-                    <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
-                </td>
+                @if (User.IsInRole("Jefe"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.id">Detalles</a>
+                    </td>
+
+                }
             </tr>
         }
     </tbody>
