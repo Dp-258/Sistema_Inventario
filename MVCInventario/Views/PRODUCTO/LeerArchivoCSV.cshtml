@@ -1,0 +1,199 @@
+﻿@model MVCInventario.Models.ProductoViewModel
+
+@{
+    ViewData["Title"] = "LeerArchivoCSV";
+}
+
+<h1 class="titulo separacion" style="color:black; text-align:center">Leer Archivo CSV</h1>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/Clientes.css">
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    .error {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+@*<form id="form" action=/Con/LeerA rchivoCSV" method="post" enctype="multipart/form-data">*@
+<input type="file" id="file-input">
+<br />
+<br />
+<table id="data-table">
+    <thead style="background-color:#ddd">
+        <tr></tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<br>
+@*<button onclick="clearFile()">Borrar archivo</button>*@
+<input type="submit" onclick="clearFile()" class="bg-primary text-white" value="Borrar archivo" style="margin-left: 20px; background-color: #cdd0d1" />
+@*<button onclick="checkErrors()" id="btnCargarArchivo" class="bg-primary text-white>Cargar</button>*@
+<input type="submit" onclick="checkErrors()" class="bg-primary text-white" value="Cargar" style="margin-left: 20px; margin-right: 20px; background-color: #cdd0d1" />
+<a asp-action="Index">Atrás</a>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let file = null;
+        let errors = [];
+
+        document.getElementById('file-input').addEventListener('change', handleFileSelect, false);
+
+        function handleFileSelect(event) {
+            file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const contents = e.target.result;
+                const rows = contents.split('\n');
+                const table = document.getElementById('data-table');
+                table.innerHTML = '';
+                errors = [];
+
+                for (let i = 0; i < rows.length; i++) {
+                    const cells = rows[i].split(',');
+                    const row = document.createElement('tr');
+
+                    if (i === 0) {
+                        for (let j = 0; j < cells.length; j++) {
+                            const headerCell = document.createElement('th');
+                            headerCell.textContent = cells[j];
+                            row.appendChild(headerCell);
+                        }
+                    } else if (cells.length > 1) {
+                        for (let j = 0; j < cells.length; j++) {
+                            const cell = document.createElement('td');
+                            const value = cells[j].trim();
+                            let isValid = true;
+                            let errorMessage = '';
+
+                            // Validación para el campo "Código" (solo números entre 0 y 9)
+                            if (j === 0 && !/^[0-9]{10}$/.test(value)) {
+                                isValid = false;
+                                errorMessage = 'El código debe contener solo números.';
+                            }
+
+
+
+                            //Validación codigo no repetido
+                            var id = cells[0];
+                            if (j === 0) {
+                                var resultado = validarCodigo(id);
+                                isValid = resultado.isValid;
+                                errorMessage = resultado.errorMessage;
+                            }
+
+                            // Validación para el campo "Stock" y "PVP" (números no negativos)
+                            if ((j === 3 || j === 4) && (isNaN(value) || parseFloat(value) < 0)) {
+                                isValid = false;
+                                errorMessage = 'El valor: '+ cells[j] +' debe ser un número no negativo.';
+                            }
+
+                            // Validación para el campo "Categoría" (no debe contener números)
+                            if (j === 5 && /\d/.test(value)) {
+                                isValid = false;
+                                errorMessage = 'La categoría: ' + cells[j] + ' no debe contener números.';
+                            }
+
+                            if (j === 3) {
+                                // Establecer el valor del stock en 0
+                                cell.textContent = '0';
+                            } else if (j === 6) {
+                                // Mostrar la imagen
+                                const image = document.createElement('img');
+                                image.src = value;
+                                image.style.maxWidth = '100px';
+                                image.style.maxHeight = '100px';
+                                cell.appendChild(image);
+                            } else if (isValid) {
+                                cell.textContent = value;
+                            } else {
+                                cell.innerHTML = '<span class="error">' + value + '</span>';
+                                cell.setAttribute('title', errorMessage);
+                                errors.push(errorMessage);
+                            }
+
+                            row.appendChild(cell);
+                        }
+                    }
+
+                    table.appendChild(row);
+                }
+            };
+
+            reader.readAsText(file);
+        }
+
+        function validarCodigo(codigo) {
+            var isValid = false;
+            var errorMessage = '';
+
+            $.ajax({
+                url: '@Url.Action("GetUserInfo", "PRODUCTO")',
+                data: { id: codigo },
+                async: false,
+                success: function (result) {
+                    if (result == null) {
+                        isValid = true;
+                    } else {
+                        isValid = false;
+                        errorMessage = 'El código: ' + codigo + ', se encuentra ingresado';
+                    }
+                }
+            });
+
+            return { isValid: isValid, errorMessage: errorMessage };
+        }
+
+        function clearFile() {
+            file = null;
+            document.getElementById('file-input').value = '';
+            document.getElementById('data-table').innerHTML = '';
+            errors = [];
+        }
+
+        function checkErrors() {
+            if (errors.length === 0) {
+                $(document).ready(function () {
+                    // Asociar evento al botón "Cargar Archivo"
+                    // Obtener el archivo seleccionado
+                    var archivo = $('#file-input').get(0).files[0];
+
+                    // Crear un objeto FormData para enviar el archivo al controlador
+                    var formData = new FormData();
+                    formData.append('archivo', archivo);
+
+                    // Realizar la petición AJAX al controlador
+                    $.ajax({
+                        url: '@Url.Action("LeerArchivoCSV", "PRODUCTO")',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (result) {
+                            // Realizar alguna acción después de cargar el archivo, si es necesario
+                            // Por ejemplo, redireccionar a una nueva página o actualizar la vista actual
+                            alert('Archivo cargado con éxito');
+                            window.location.reload(); // Ejemplo: recargar la página actual
+                        },
+                        error: function (xhr, status, error) {
+                            // Manejar el error, si ocurre
+                            alert('Error al cargar el archivo');
+                        }
+                    });
+                });
+            } else {
+                const errorMessage = 'Se encontraron errores en el archivo:\n\n' + errors.join('\n');
+                alert(errorMessage);
+            }
+        }
+    </script>
+}

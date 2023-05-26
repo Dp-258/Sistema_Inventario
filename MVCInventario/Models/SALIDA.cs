@@ -32,6 +32,7 @@ namespace MVCInventario.Models
         //[RegularExpression(@"^(?=.[1-9])\d*(.\d{1,2})?$", ErrorMessage = "Ingrese una cantidad positiva")]
 
         public decimal MONTOTOTALSALIDA { get; set; }
+        public int ANULARSALIDA { get; set; }
 
 
         [NotMapped]

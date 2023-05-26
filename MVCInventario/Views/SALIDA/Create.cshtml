@@ -23,7 +23,7 @@
             <div class="form-group">
                 <label asp-for="Salida.IDCLIENTE" class="control-label">Cédula del cliente</label>
                 <!--<select asp-for="Salida.IDCLIENTE" asp-items="Model.NomL" class="form-control"></select>-->
-                <input id="codCli" type="text" class="form-control" maxlength="10" />
+                <input id="codCli" type="text" class="form-control" maxlength="10"  />
                 <div id="cli-info">
                     <p style="color:#727581"><span id="name"></span></p>
                 </div>
@@ -49,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Salida.CANTIDADSALIDA" class="control-label"></label>
-                <input asp-for="Salida.CANTIDADSALIDA" class="form-control" />
+                <input asp-for="Salida.CANTIDADSALIDA" class="form-control" id="qntSal" />
                 <span asp-validation-for="Salida.CANTIDADSALIDA" class="text-danger"></span>
             </div>
             <!--<div class="form-group" hidden >
@@ -69,6 +69,14 @@
     {
         <script>
             alert("@TempData["ErrorMessage"]");
+        </script>
+    }
+    @if (TempData["Stock"] == null)
+    {
+        <script>
+            localStorage.removeItem('codCli');
+            localStorage.removeItem('codProd');
+            localStorage.removeItem('qntSal');
         </script>
     }
 </div>
@@ -114,6 +122,33 @@
                     }
                 }
             });
+        });
+        var input = document.getElementById('codCli');
+        var input2 = document.getElementById('codProd');
+        var input3 = document.getElementById('qntSal');
+        // Recupera el valor almacenado en el almacenamiento local (si existe)
+        var savedValue = localStorage.getItem('codCli');
+        var savedValue2 = localStorage.getItem('codProd');
+        var savedValue3 = localStorage.getItem('qntSal');
+        // Restaura el 2valor guardado en el campo de entrada
+        if (savedValue) {
+            input.value = savedValue;
+        }
+        if (savedValue2) {
+            input2.value = savedValue2;
+        }
+        if (savedValue3) {
+            input3.value = savedValue3;
+        }
+        // Escucha el evento 'input' para guardar el valor en el almacenamiento local
+        input.addEventListener('input', function () {
+            localStorage.setItem('codCli', input.value);
+        });
+        input2.addEventListener('input', function () {
+            localStorage.setItem('codProd', input2.value);
+        });
+        input3.addEventListener('input', function () {
+            localStorage.setItem('qntSal', input3.value);
         });
     </script>
 }

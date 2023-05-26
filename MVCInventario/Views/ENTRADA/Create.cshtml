@@ -7,6 +7,8 @@
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Clientes.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" />
+
 </head>
 <h1 style="color:black; text-align:center" class="separacion">Ingrese los datos de la entrada</h1>
 <hr />
@@ -23,6 +25,7 @@
                 <div id="prov-info">
                     <p style="color:#727581"><span id="name"></span></p>
                 </div>
+
                 <input asp-for="Entrada.IDPROVEEDOR" id="id-prov" class="form-control" hidden />
                 <span asp-validation-for="Entrada.IDPROVEEDOR" class="text-danger"></span>
             </div>
@@ -43,7 +46,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Entrada.CANTIDADPENTRADA" class="control-label"></label>
-                <input asp-for="Entrada.CANTIDADPENTRADA" class="form-control" />
+                <input asp-for="Entrada.CANTIDADPENTRADA" class="form-control" id="qntEn" />
                 <span asp-validation-for="Entrada.CANTIDADPENTRADA" class="text-danger"></span>
             </div>
             <!--<div class="form-group">
@@ -65,12 +68,24 @@
             alert("@TempData["ErrorMessage"]");
         </script>
     }
+    @if (TempData["Stock"] == null)
+    {
+        <script>
+            localStorage.removeItem('codProv1');
+            localStorage.removeItem('codProd1');
+            localStorage.removeItem('qntEn');
+        </script>
+    }
 </div>
 
 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css" />
+
     <script>
         $('#codProv').on('change', function () {
             var id = $(this).val();
@@ -107,6 +122,33 @@
                     }
                 }
             });
+        });
+        var input = document.getElementById('codProv');
+        var input2 = document.getElementById('codProd');
+        var input3 = document.getElementById('qntEn');
+        // Recupera el valor almacenado en el almacenamiento local (si existe)
+        var savedValue = localStorage.getItem('codProv1');
+        var savedValue2 = localStorage.getItem('codProd1');
+        var savedValue3 = localStorage.getItem('qntEn');
+        // Restaura el 2valor guardado en el campo de entrada
+        if (savedValue) {
+            input.value = savedValue;
+        }
+        if (savedValue2) {
+            input2.value = savedValue2;
+        }
+        if (savedValue3) {
+            input3.value = savedValue3;
+        }
+        // Escucha el evento 'input' para guardar el valor en el almacenamiento local
+        input.addEventListener('input', function () {
+            localStorage.setItem('codProv1', input.value);
+        });
+        input2.addEventListener('input', function () {
+            localStorage.setItem('codProd1', input2.value);
+        });
+        input3.addEventListener('input', function () {
+            localStorage.setItem('qntEn', input3.value);
         });
     </script>
 }

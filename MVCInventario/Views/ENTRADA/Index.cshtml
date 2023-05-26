@@ -9,11 +9,14 @@
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Clientes.css">
+
   
 </head>
 <h1 class="titulo separacion" style="color:black; text-align:center">ENTRADAS</h1>
 <div class="text-center separacion">
     <a asp-action="Create" style="color:black" class="hexagoncli">Crear <i class="fa-solid fa-arrow-down-long fa-3x" style="color: #000000;"></i></a>
+    <a style="color:black" class="hexagoncli" onclick="mostrarModal()">Reporte <i class="fa-solid fa-file-pdf fa-3x" style="color: #000000;"></i></a>
+    
 </div>
 <br/>
 <form asp-controller="ENTRADA" asp-action="Index" method="get">
@@ -29,6 +32,43 @@
         <br />
     </p>
 </form>
+
+<!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Generar PDF</h5>
+               
+            </div>
+            <div class="modal-body">
+                <label>Seleccione el parámetro</label>
+                <div>
+                    <select id="parametroBusqueda">
+                        <option value="monto">MONTO</option>
+                        <option value="cantidad">CANTIDAD</option>
+
+                    </select>
+                </div>
+                <br />
+                <label>Seleccione el rango de fecha</label>
+                <div>
+                    <input type="date" id="fecha1" max="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                    <input type="date" id="fecha2" max="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="buscarPDF()">Generar PDF</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <br />
 <table class="table">
     <thead>
@@ -48,45 +88,105 @@
             <th>
                 @Html.DisplayNameFor(model => model.Entradas[0].MONTOTOTALENTRADA)
             </th>
+            <th>
+                Estado
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Entradas) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.proveedor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.producto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FECHAREGISTROENTRADA)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CANTIDADPENTRADA)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MONTOTOTALENTRADA)
-            </td>
-                @if (User.IsInRole("Jefe")){
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
-            </td>
-                }else{
+        @foreach (var item in Model.Entradas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.proveedor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.producto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FECHAREGISTROENTRADA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CANTIDADPENTRADA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MONTOTOTALENTRADA)
+                </td>
+                @if (User.IsInRole("Jefe"))
+                {
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.id">Detalles</a> 
+                        @if (item.ANULARENTRADA == 0)
+                        {
+                            <i class="fas fa-check fa-lg" style="color: #22b940;"></i> <!-- Icono de visto -->
+                        }
+                        else
+                        {
+                            <i class="fas fa-times fa-lg" style="color: red;"></i> <!-- Icono de " x" -->
+                        }
                     </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.id">Detalles</a>
+                    </td>
+                }
+                else
+                {
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <td>
+                            @if (item.ANULARENTRADA == 0)
+                            {
+                                <i class="fas fa-check fa-lg" style="color: #22b940;"></i> <!-- Icono de visto -->
+                            }
+                            else
+                            {
+                                <i class="fas fa-times fa-lg" style="color: red;"></i> <!-- Icono de " x" -->
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.id">Detalles</a>
+
+                            @if (item.ANULARENTRADA == 0)
+                            {
+                                <a asp-action="Delete" asp-route-id="@item.id"> | Anular</a>
+                            }
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.id">Detalles</a>
+                        </td>
+                    }
 
                 }
-        </tr>
-}
+            </tr>
+        }
     </tbody>
 </table>
 <br />
 <br />
+
+<script>
+    function buscarPDF() {
+        var parametro = document.getElementById("parametroBusqueda").value;
+        var fecha1 = document.getElementById("fecha1").value;
+        var fecha2 = document.getElementById("fecha2").value;
+        var url = "@Url.Action("PDF", "ENTRADA")?parametro=" + encodeURIComponent(parametro) + "&fecha1=" + encodeURIComponent(fecha1) + "&fecha2=" + encodeURIComponent(fecha2);
+        window.open(url, "_blank");
+    }
+</script>
+
+<script>
+    function mostrarModal() {
+        document.getElementById("exampleModal").style.display = "block";
+    }
+</script>
+<script>
+function cerrarModal() {
+        document.getElementById("exampleModal").style.display = "none";
+}
+</script>
 @if (TempData["ErrorMessage"] != null)
 {
     <script>

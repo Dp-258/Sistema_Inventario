@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/lbNIdxt1tNSiyFQiNdbBMfTx8tUfLpfDNxacWaWRhY=",
+  "Hash": "SisZfX3Pz9OAB5ULYcWjom9Iw9iy0VOt5NUfVS29gBQ=",
   "Source": "MVCInventario",
   "BasePath": "_content/MVCInventario",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "MVCInventario\\wwwroot",
       "Source": "MVCInventario",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "Pattern": "**"
     }
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.15\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\Clientes.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\Clientes.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "css/Clientes.css",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Clientes.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\estiloHome.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\estiloHome.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "css/estiloHome.css",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\css\\estiloHome.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\estilos.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\estilos.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "css/estilos.css",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\css\\estilos.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\loginStyle.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\loginStyle.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "css/loginStyle.css",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\css\\loginStyle.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\Proveedores.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\Proveedores.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "css/Proveedores.css",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Proveedores.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\css\\site.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\favicon.ico",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\img\\stockUpLogo.png",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\img\\stockUpLogo.png",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "img/stockUpLogo.png",
       "AssetKind": "All",
@@ -1173,10 +1173,27 @@
       "OriginalItemSpec": "wwwroot\\img\\stockUpLogo.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\esconder_nav.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\img\\stockUpLogo1.png",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "BasePath": "_content/MVCInventario",
+      "RelativePath": "img/stockUpLogo1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\stockUpLogo1.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\esconder_nav.js",
+      "SourceId": "MVCInventario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "js/esconder_nav.js",
       "AssetKind": "All",
@@ -1190,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\js\\esconder_nav.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\nav.json",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\nav.json",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "js/nav.json",
       "AssetKind": "All",
@@ -1207,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\js\\nav.json"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectCliente.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectCliente.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "js/opcionesSelectCliente.js",
       "AssetKind": "All",
@@ -1224,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\js\\opcionesSelectCliente.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectEntradas.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectEntradas.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "js/opcionesSelectEntradas.js",
       "AssetKind": "All",
@@ -1241,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\js\\opcionesSelectEntradas.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectProduto.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectProduto.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "js/opcionesSelectProduto.js",
       "AssetKind": "All",
@@ -1258,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\js\\opcionesSelectProduto.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectProveedor.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\opcionesSelectProveedor.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "js/opcionesSelectProveedor.js",
       "AssetKind": "All",
@@ -1275,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\js\\opcionesSelectProveedor.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\script.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\script.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "js/script.js",
       "AssetKind": "All",
@@ -1292,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\js\\script.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\site.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -1309,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\validacionCedula.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\js\\validacionCedula.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "js/validacionCedula.js",
       "AssetKind": "All",
@@ -1326,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\js\\validacionCedula.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -1343,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -1360,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1377,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1394,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -1411,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -1428,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -1445,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -1462,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -1479,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -1496,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1513,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1530,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1547,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1564,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1581,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1598,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1615,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1632,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1649,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1666,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1683,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1700,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1717,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1734,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1751,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1768,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1785,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1802,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1819,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1836,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1853,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1870,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "MVCInventario",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\wwwroot\\",
       "BasePath": "_content/MVCInventario",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

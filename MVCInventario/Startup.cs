@@ -5,12 +5,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using DinkToPdf;
+using DinkToPdf.Contracts;
+using MVCInventario.Extension;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MVCInventario.Data;
 using Microsoft.AspNetCore.Identity;
+using System.IO;
 
 namespace MVCInventario
 {
@@ -27,6 +31,9 @@ namespace MVCInventario
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            var cont = new CustomAssemblyLoadContext();
+            cont.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), "LibreriaPdf/libwkhtmltox.dll"));
+            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
             services.AddDbContext<MVCInventarioContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MVCInventarioContext")));

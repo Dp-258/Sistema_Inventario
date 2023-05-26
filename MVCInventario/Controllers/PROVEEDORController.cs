@@ -20,8 +20,7 @@ namespace MVCInventario.Controllers
         {
             _context = context;
         }
-        [Authorize(Roles = "Jefe, Operador")]
-        // GET: PROVEEDOR
+        [Authorize(Roles = "Jefe, Operador, Administrador")]        // GET: PROVEEDOR
         public async Task<IActionResult> Index(ProveedorViewModel modelo)
         {
             //Obtener la lista de Proveedores
@@ -72,8 +71,7 @@ namespace MVCInventario.Controllers
             modelo.Proveedores = await Proveedores.ToListAsync();
             return View(modelo);
         }
-        [Authorize(Roles = "Jefe, Operador")]
-        // GET: PROVEEDOR/Details/5
+        [Authorize(Roles = "Jefe, Operador, Administrador")]        // GET: PROVEEDOR/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -90,8 +88,7 @@ namespace MVCInventario.Controllers
 
             return View(pROVEEDOR);
         }
-        [Authorize(Roles = "Jefe,Operador")]
-        // GET: PROVEEDOR/Create
+        [Authorize(Roles = "Jefe, Operador, Administrador")]        // GET: PROVEEDOR/Create
         public IActionResult Create()
         {
             return View();
@@ -102,7 +99,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Jefe,Operador")]
+        [Authorize(Roles = "Jefe, Operador, Administrador")]
         public async Task<IActionResult> Create([Bind("Id,CEDULAPROVEEDOR,NOMBREPROVEEDOR,DIRECCIONPROVEEDOR,CORREOPROVEEDOR,CIUDADPROVEEDOR")] PROVEEDOR pROVEEDOR)
         {
             if (ModelState.IsValid)
@@ -125,7 +122,7 @@ namespace MVCInventario.Controllers
             }
             return View(pROVEEDOR);
         }
-        [Authorize(Roles = "Jefe")]
+        [Authorize(Roles = "Jefe, Administrador")]
         // GET: PROVEEDOR/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -147,7 +144,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Jefe")]
+        [Authorize(Roles = "Jefe,Administrador")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CEDULAPROVEEDOR,NOMBREPROVEEDOR,DIRECCIONPROVEEDOR,CORREOPROVEEDOR,CIUDADPROVEEDOR")] PROVEEDOR pROVEEDOR)
         {
             if (id != pROVEEDOR.Id)
@@ -189,7 +186,7 @@ namespace MVCInventario.Controllers
             }
             return View(pROVEEDOR);
         }
-        [Authorize(Roles = "Jefe")]
+        [Authorize(Roles = "Jefe,Administrador")]
         // GET: PROVEEDOR/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -207,7 +204,7 @@ namespace MVCInventario.Controllers
 
             return View(pROVEEDOR);
         }
-        [Authorize(Roles = "Jefe")]
+        [Authorize(Roles = "Jefe,Administrador")]
         // POST: PROVEEDOR/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

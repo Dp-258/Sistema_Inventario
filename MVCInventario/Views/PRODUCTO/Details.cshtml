@@ -58,7 +58,7 @@
                     <img src="@Model.FOTOPRODUCTO" width="100" height="100">
                 </dd>
             </dl>
-            @if (User.IsInRole("Jefe"))
+            @if (User.IsInRole("Jefe,Administrador"))
             {
                 <div>
                     <a asp-action="Edit" asp-route-id="@Model.id">Editar</a> |
@@ -67,9 +67,19 @@
             }
             else
             {
-                <div>
-                    <a asp-action="Index">Volver a la lista</a>
-                </div>
+                @if (User.IsInRole("Administrador"))
+                {
+                    <div>
+                        <a asp-action="Edit" asp-route-id="@Model.id">Editar</a> |
+                        <a asp-action="Index">Volver a la lista</a>
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <a asp-action="Index">Volver a la lista</a>
+                    </div>
+                }
             }
             <br />
         </div>

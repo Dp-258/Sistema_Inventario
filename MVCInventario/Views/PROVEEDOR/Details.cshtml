@@ -46,7 +46,7 @@
             @Html.DisplayFor(model => model.CIUDADPROVEEDOR)
         </dd>
     </dl>
-        @if (User.IsInRole("Jefe"))
+        @if (User.IsInRole("Jefe,Administrador"))
         {
             <div>
                 <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
@@ -55,9 +55,19 @@
         }
         else
         {
-            <div>
-                <a asp-action="Index">Volver a la lista</a>
-            </div>
+            @if (User.IsInRole("Administrador"))
+            {
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+                    <a asp-action="Index">Volver a la lista</a>
+                </div>
+            }
+            else
+            {
+                <div>
+                    <a asp-action="Index">Volver a la lista</a>
+                </div>
+            }
         }
     <br />
 </div>

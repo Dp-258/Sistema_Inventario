@@ -49,6 +49,7 @@
 <h1 class="titulo separacion" style="color:black; text-align:center">PRODUCTOS</h1>
 <div class="text-center separacion">
     <a asp-action="Create" style="color:black" class="hexagoncli">Crear <i class="fa-solid fa-boxes-stacked fa-4x" style="color: #000000;"></i></a>
+    <a asp-action="LeerArchivoCSV" style="color:black" class="hexagoncli">Cargar <i class="fa-solid fa-file-csv fa-4x" style="color: #000000;"></i></a>
 </div>
 <br>
 <div class="contenedortable separacion">
@@ -115,11 +116,20 @@
                     }
                     else
                     {
-                        <td>
-                            <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
-                            <a href="#" onclick="showBarcodeModal(@item.CODIGOPRODUCTO)">Generar Código de Barras</a>
-
-                        </td>
+                        @if (User.IsInRole("Administrador"))
+                        {
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                                <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
+                                <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.id">Detalles</a>
+                            </td>
+                        }
 
                     }
                 </tr>

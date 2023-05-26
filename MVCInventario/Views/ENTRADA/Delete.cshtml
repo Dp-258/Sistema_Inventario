@@ -1,7 +1,7 @@
 ﻿@model MVCInventario.Models.ENTRADA
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Anular";
 }
 
 <head>
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/css/Clientes.css">
 
 </head>
-<h1 style="color:black; text-align:center" class="separacion">Eliminar datos de la entrada</h1>
+<h1 style="color:black; text-align:center" class="separacion">¿Esta seguro de anular la entrada?</h1>
 
 
 <hr />
@@ -49,16 +49,16 @@
                 @Html.DisplayFor(model => model.MONTOTOTALENTRADA)
             </dd>
         </dl>
- 
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="id" />
-            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="id" />
+            <input type="submit" value="Anular" class="btn btn-danger" /> |
             <a asp-action="Index">Cancelar</a>
-    </form>
-    <br/>
+        </form>
+        <br />
     </div>
-    
+
     @if (TempData["ErrorMessage"] != null)
     {
         <script>

@@ -7,7 +7,7 @@ namespace MVCInventario.Models
 {
     public class ENTRADA
     {
-       public int id { get; set; }
+        public int id { get; set; }
         [Display(Name = "Proveedor")]
         [Required(ErrorMessage = "Es necesario ingresar un proveedor  ")]
 
@@ -20,7 +20,7 @@ namespace MVCInventario.Models
         [Required(ErrorMessage = "Es necesario ingresar una fecha ")]
         [DataType(DataType.Date)]
         public DateTime FECHAREGISTROENTRADA { get; set; }
-        
+
         [Display(Name = "Cantidad")]
         [Required(ErrorMessage = "Es necesario ingresar una cantidad")]
         [RegularExpression(@"^\d+$", ErrorMessage = "Ingrese un número entero y positivo")]
@@ -31,6 +31,7 @@ namespace MVCInventario.Models
         //[RegularExpression(@"^(?=.[1-9])\d*(.\d{1,2})?$", ErrorMessage = "Ingrese una cantidad positiva")]
 
         public decimal MONTOTOTALENTRADA { get; set; }
+        public int ANULARENTRADA { get; set; }
 
 
         [NotMapped]
@@ -41,6 +42,6 @@ namespace MVCInventario.Models
         [NotMapped]
         [Display(Name = "Producto")]
         public string producto { get; set; }
-       
+
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {}
+    "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {
+    "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
         "projectName": "MVCInventario",
-        "projectPath": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Downloads\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "DinkToPdf": {
+              "target": "Package",
+              "version": "[1.0.8, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.15, )"
@@ -61,6 +65,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.13, )"
+            },
+            "iTextSharp.LGPLv2.Core": {
+              "target": "Package",
+              "version": "[3.4.2, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

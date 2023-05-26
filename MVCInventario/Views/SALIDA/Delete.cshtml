@@ -1,7 +1,7 @@
 ﻿@model MVCInventario.Models.SALIDA
 
 @{
-    ViewData["Title"] = "Borrar";
+    ViewData["Title"] = "Anular";
 }
 
 <head>
@@ -10,7 +10,7 @@
 
 </head>
 
-<h1 style="color:black; text-align:center" class="separacion">Eliminar datos de la salida</h1>
+<h1 style="color:black; text-align:center" class="separacion">¿Desea anular la salida?</h1>
 <hr />
 <br />
 <div class="row">
@@ -51,9 +51,9 @@
 
 
         <form asp-action="Delete">
-        <input type="hidden" asp-for="id" />
-        <input type="submit" value="Borrar" class="btn btn-danger" /> |
-        <a asp-action="Index">Regresar</a>
-    </form>
-</div>
+            <input type="hidden" asp-for="id" />
+            <input type="submit" value="Anular" class="btn btn-danger" /> |
+            <a asp-action="Index">Regresar</a>
+        </form>
+    </div>
 </div>

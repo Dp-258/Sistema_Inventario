@@ -11,7 +11,7 @@ using MVCInventario.Models;
 
 namespace MVCInventario.Controllers
 {
-   
+    [Authorize]
     public class CLIENTEController : Controller
     {
         private readonly MVCInventarioContext _context;
@@ -22,7 +22,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: CLIENTE
-        [Authorize(Roles = "Jefe, Operador")]
+        [Authorize(Roles = "Jefe, Operador, Administrador")]
         public async Task<IActionResult> Index(ClienteViewModel modelo)
         {
             //Obtener la lista de Clientes
@@ -52,8 +52,7 @@ namespace MVCInventario.Controllers
             modelo.Clientes = await Clientes.ToListAsync();
             return View(modelo);
         }
-        [Authorize(Roles = "Jefe, Operador")]
-        // GET: CLIENTE/Details/5
+        [Authorize(Roles = "Jefe, Operador, Administrador")]        // GET: CLIENTE/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -70,8 +69,7 @@ namespace MVCInventario.Controllers
 
             return View(cLIENTE);
         }
-        [Authorize(Roles = "Jefe, Operador")]
-        // GET: CLIENTE/Create
+        [Authorize(Roles = "Jefe, Operador, Administrador")]        // GET: CLIENTE/Create
         public IActionResult Create()
         {
             return View();
@@ -82,7 +80,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Jefe, Operador")]
+        [Authorize(Roles = "Jefe, Operador, Administrador")]
         public async Task<IActionResult> Create([Bind("Id,CEDULACLIENTE,NOMBRECLIENTE")] CLIENTE cLIENTE)
         {
             if (ModelState.IsValid)
@@ -104,8 +102,7 @@ namespace MVCInventario.Controllers
             }
             return View(cLIENTE);
         }
-        [Authorize(Roles = "Jefe, Operador")]
-        // GET: CLIENTE/Edit/5
+        [Authorize(Roles = "Jefe, Operador, Administrador")]        // GET: CLIENTE/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -126,7 +123,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Jefe, Operador")]
+        [Authorize(Roles = "Jefe, Operador, Administrador")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CEDULACLIENTE,NOMBRECLIENTE")] CLIENTE cLIENTE)
         {
             if (id != cLIENTE.Id)
@@ -171,7 +168,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: CLIENTE/Delete/5
-        [Authorize(Roles = "Jefe")]
+        [Authorize(Roles = "Jefe,Administrador")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -192,7 +189,7 @@ namespace MVCInventario.Controllers
         // POST: CLIENTE/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Jefe")]
+        [Authorize(Roles = "Jefe, Administrador")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             try

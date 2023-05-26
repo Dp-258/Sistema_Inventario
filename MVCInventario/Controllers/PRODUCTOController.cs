@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,13 +18,75 @@ namespace MVCInventario.Controllers
     public class PRODUCTOController : Controller
     {
         private readonly MVCInventarioContext _context;
+        public async Task<IActionResult> LeerArchivoCSVAsync(IFormFile archivo)
+        {
+            List<PRODUCTO> productos = new List<PRODUCTO>();
 
+            if (archivo != null && archivo.Length > 0)
+            {
+                using (var reader = new StreamReader(archivo.OpenReadStream()))
+                {
+                    // Ignoramos la primera línea si contiene encabezados
+                    var encabezados = reader.ReadLine();
+
+                    while (!reader.EndOfStream)
+                    {
+                        var linea = reader.ReadLine();
+                        var valores = linea.Split(',');
+
+                        var codigo = valores[0];
+                        var nombre = valores[1];
+                        var descripcion = valores[2];
+                        var stock = 0;
+                        var precio = Convert.ToDecimal(valores[4]);
+                        var categoria = valores[5];
+                        var imagen = valores[6];
+                        if (codigo != null)
+                        {
+                            PRODUCTO val = await _context.PRODUCTO.SingleOrDefaultAsync(p => p.CODIGOPRODUCTO == codigo);
+                            if (val != null)
+                            {
+
+                            }
+                        }
+                        var producto = new PRODUCTO
+                        {
+                            CODIGOPRODUCTO = codigo,
+                            NOMBREPRODUCTO = nombre,
+                            DESCRIPCIONPRODUCTO = descripcion,
+                            STOCKPRODUCTO = stock,
+                            PVPPRODUCTO = precio,
+                            CATEGORIAPRODUCTO = categoria,
+                            FOTOPRODUCTO = imagen
+                        };
+
+                        productos.Add(producto);
+                    }
+                }
+
+                // Guardar los productos en la base de datos
+                foreach (var producto in productos)
+                {
+                    _context.PRODUCTO.Add(producto);
+                }
+
+                _context.SaveChanges();
+            }
+
+            // Construir el modelo ProductoViewModel
+            ProductoViewModel viewModel = new ProductoViewModel
+            {
+                Productos = productos
+            };
+
+            // Pasar el modelo a la vista
+            return View(viewModel);
+        }
         public PRODUCTOController(MVCInventarioContext context)
         {
             _context = context;
         }
-        [Authorize(Roles = "Jefe, Operador")]
-        // GET: PRODUCTO
+        [Authorize(Roles = "Jefe, Operador, Administrador")]        // GET: PRODUCTO
         public async Task<IActionResult> Index(ProductoViewModel modelo)
         {
             var Productos = _context.PRODUCTO.Select(p => p);
@@ -46,7 +110,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: PRODUCTO/Details/5
-        [Authorize(Roles = "Jefe, Operador")]
+        [Authorize(Roles = "Jefe, Operador, Administrador")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -67,7 +131,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: PRODUCTO/Create
-        [Authorize(Roles = "Jefe, Operador")]
+        [Authorize(Roles = "Jefe, Operador, Administrador")]
         public IActionResult Create()
         {
 
@@ -79,7 +143,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Jefe, Operador")]
+        [Authorize(Roles = "Jefe, Operador, Administrador")]
         public async Task<IActionResult> Create([Bind("id,CODIGOPRODUCTO,NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCKPRODUCTO,PVPPRODUCTO,CATEGORIAPRODUCTO,FOTOPRODUCTO")] PRODUCTO pRODUCTO)
         {
             if (ModelState.IsValid)
@@ -106,7 +170,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: PRODUCTO/Edit/5
-        [Authorize(Roles = "Jefe, Operador")]
+        [Authorize(Roles = "Jefe, Operador, Administrador")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -127,7 +191,7 @@ namespace MVCInventario.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Jefe, Operador")]
+        [Authorize(Roles = "Jefe, Operador, Administrador")]
         public async Task<IActionResult> Edit(int id, [Bind("id,CODIGOPRODUCTO,NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCKPRODUCTO,PVPPRODUCTO,CATEGORIAPRODUCTO,FOTOPRODUCTO")] PRODUCTO pRODUCTO)
         {
             if (id != pRODUCTO.id)
@@ -171,7 +235,7 @@ namespace MVCInventario.Controllers
         }
 
         // GET: PRODUCTO/Delete/5
-        [Authorize(Roles = "Jefe")]
+        [Authorize(Roles = "Jefe, Administrador")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -192,7 +256,7 @@ namespace MVCInventario.Controllers
         // POST: PRODUCTO/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Jefe")]
+        [Authorize(Roles = "Jefe,Administrador")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             try
@@ -255,6 +319,17 @@ namespace MVCInventario.Controllers
             ViewBag.SearchPager = SearchPager;
 
             return View(retProductos);
+        }
+        public IActionResult GetUserInfo(string id)
+        {
+            var user = _context.PRODUCTO.FirstOrDefault(u => u.CODIGOPRODUCTO == id);
+
+            if (user == null)
+            {
+                return Json(null);
+            }
+
+            return Json(new { name = user.CODIGOPRODUCTO });
         }
     }
 }
