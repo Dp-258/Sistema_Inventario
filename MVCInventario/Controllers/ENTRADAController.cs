@@ -82,6 +82,7 @@ namespace MVCInventario.Controllers
 
             doc.Add(new Chunk("\n"));
             doc.Add(new Phrase("\n"));
+            doc.Add(new Paragraph(" "));
 
             var table = new PdfPTable(new float[] { 50f, 50f }) { WidthPercentage = 100 };
             table.AddCell(new PdfPCell(new Phrase("Informe de Entradas", titulo)) { Border = 0, Rowspan = 4, VerticalAlignment = Element.ALIGN_MIDDLE });

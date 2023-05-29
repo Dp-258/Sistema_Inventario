@@ -23,11 +23,13 @@ namespace MVCInventario.Models
 
         [Display(Name = "Cantidad")]
         [Required(ErrorMessage = "Es necesario ingresar una cantidad")]
+      
         [RegularExpression(@"^\d+$", ErrorMessage = "Ingrese un número entero y positivo")]
 
         public int CANTIDADPENTRADA { get; set; }
         [Display(Name = "Total")]
-        [Column(TypeName = "decimal(8,2)")]
+        //esto a 38
+        [Column(TypeName = "decimal(38,2)")]
         //[RegularExpression(@"^(?=.[1-9])\d*(.\d{1,2})?$", ErrorMessage = "Ingrese una cantidad positiva")]
 
         public decimal MONTOTOTALENTRADA { get; set; }
