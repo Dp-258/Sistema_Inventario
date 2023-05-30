@@ -41,7 +41,7 @@ namespace MVCInventario.Controllers
             Document doc = new Document(iTextSharp.text.PageSize.Letter);
 
             doc.SetMargins(70.8661f, 70.8661f, 35.0394f, 40.0394f);
-            FileStream file = new FileStream("reporte_entrada.pdf", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            MemoryStream file = new MemoryStream();
             PdfWriter writer = PdfWriter.GetInstance(doc, file);
 
             PageEventHelper eventHandler = new PageEventHelper();
@@ -59,12 +59,31 @@ namespace MVCInventario.Controllers
             BaseFont _subtitulo = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1252, true);
             iTextSharp.text.Font subtitulo = new iTextSharp.text.Font(_subtitulo, 14f, iTextSharp.text.Font.BOLD, new BaseColor(0, 0, 0));
 
-            BaseFont _parrafo = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1257, true);
-            iTextSharp.text.Font parrafo = new iTextSharp.text.Font(_parrafo, 12f, iTextSharp.text.Font.NORMAL, new BaseColor(0, 0, 0));
+            //BaseFont _parrafo = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1257, true);
+            //iTextSharp.text.Font parrafo = new iTextSharp.text.Font(_parrafo, 12f, iTextSharp.text.Font.NORMAL, new BaseColor(0, 0, 0));
 
-            BaseFont _blanco = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1250, true);
-            iTextSharp.text.Font blanco = new iTextSharp.text.Font(_parrafo, 10f, iTextSharp.text.Font.NORMAL, new BaseColor(255, 255, 255));
+            //BaseFont _blanco = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1250, true);
+            //iTextSharp.text.Font blanco = new iTextSharp.text.Font(_parrafo, 10f, iTextSharp.text.Font.NORMAL, new BaseColor(255, 255, 255));
 
+            Font parrafo = FontFactory.GetFont("Courier", BaseFont.IDENTITY_H, BaseFont.EMBEDDED, 12);
+            if (fecha1 == null && fecha2 == null)
+            {
+                TempData["ErrorMessage"] = "No se puede generar el pdf, elija un rango de fechas en ambos calendarios";
+                // Retorna a la vista anterior
+                return RedirectToAction("Index");
+            }
+            else if (fecha1 == null)
+            {
+                TempData["ErrorMessage"] = "No se puede generar el pdf, elija un rango de fechas en ambos calendarios";
+                // Retorna a la vista anterior
+                return RedirectToAction("Index");
+            }
+            else if (fecha2 == null)
+            {
+                TempData["ErrorMessage"] = "No se puede generar el pdf, elija un rango de fechas en ambos calendarios";
+                // Retorna a la vista anterior
+                return RedirectToAction("Index");
+            }
 
 
             //doc.Add(new Phrase("Reporte", titulo));
@@ -86,7 +105,7 @@ namespace MVCInventario.Controllers
 
             var table = new PdfPTable(new float[] { 50f, 50f }) { WidthPercentage = 100 };
             table.AddCell(new PdfPCell(new Phrase("Informe de Entradas", titulo)) { Border = 0, Rowspan = 4, VerticalAlignment = Element.ALIGN_MIDDLE });
-         
+
             table.AddCell(new PdfPCell(new Phrase("Informe por: " + parametro, parrafo)) { Border = 0, HorizontalAlignment = Element.ALIGN_RIGHT });
             table.AddCell(new PdfPCell(new Phrase(DateTime.Parse(fecha1).ToString("dd/MM/yyyy") + " -  " + DateTime.Parse(fecha2).ToString("dd/MM/yyyy"), parrafo)) { Border = 0, HorizontalAlignment = Element.ALIGN_RIGHT, Padding = 0 });
             table.AddCell(new PdfPCell(new Phrase("Emitido el: " + DateTime.Now.ToString("dd/MM/yyyy"), parrafo)) { Border = 0, HorizontalAlignment = Element.ALIGN_RIGHT });
@@ -171,7 +190,8 @@ namespace MVCInventario.Controllers
                 // Retorna a la vista anterior
                 return RedirectToAction("Index");
             }
-            else {
+            else
+            {
                 DateTime fechaBusqueda1 = DateTime.Parse(fecha1);
                 DateTime fechaBusqueda2 = DateTime.Parse(fecha2);
                 if (fechaBusqueda1 > fechaBusqueda2)
@@ -180,7 +200,8 @@ namespace MVCInventario.Controllers
                     // Retorna a la vista anterior
                     return RedirectToAction("Index");
                 }
-                else {
+                else
+                {
                     if (parametro == "monto")
                     {
                         entradas = await _context.ENTRADA.OrderByDescending(e => e.MONTOTOTALENTRADA).ToListAsync();
@@ -193,8 +214,8 @@ namespace MVCInventario.Controllers
                         entradas = entradas.Where(p => p.FECHAREGISTROENTRADA >= fechaBusqueda1 && p.FECHAREGISTROENTRADA <= fechaBusqueda2).ToList();
                     }
                 }
-               
-        }
+
+            }
             if (!(entradas.Any()))
             {
                 // Si hay un error, muestra una ventana emergente con el mensaje de error
@@ -203,7 +224,8 @@ namespace MVCInventario.Controllers
                 // Retorna a la vista anterior
                 return RedirectToAction("Index");
             }
-            else {
+            else
+            {
                 foreach (var entrada in entradas)
                 {
                     if (entrada.ANULARENTRADA == 0)
@@ -235,7 +257,7 @@ namespace MVCInventario.Controllers
                         c5.BorderWidthLeft = 0.5f;  // Ajustar ancho del borde izquierdo
                         c5.BorderWidthRight = 0.5f;  // Ajustar ancho del borde derecho
                         c5.BorderWidthTop = 0.5f;  // Ajustar ancho del borde superior
-                        c5.PaddingLeft = 35f;
+
                         c6 = new PdfPCell(new Phrase(entrada.MONTOTOTALENTRADA.ToString(), parrafo));
                         c6.BorderWidthLeft = 0.5f;  // Ajustar ancho del borde izquierdo
                         c6.BorderWidthRight = 0.5f;  // Ajustar ancho del borde derecho
@@ -268,18 +290,20 @@ namespace MVCInventario.Controllers
                         tbl.AddCell(c6);
                         i++;
                     }
-                } 
-                
+                    
+                }
+
             }
 
 
             doc.Add(tbl);
 
             writer.Close();
-            file.Dispose();
-            var pdf = new FileStream("reporte_entrada.pdf", FileMode.Open, FileAccess.Read);
+            doc.Close();
+            doc.Dispose();
+          
 
-            return File(pdf, "application/pdf");
+            return File(file.ToArray(), "application/pdf");
 
             //nuevo codigo
 

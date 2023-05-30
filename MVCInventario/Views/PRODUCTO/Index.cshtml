@@ -116,13 +116,23 @@
                     }
                     else
                     {
-                        @if (User.IsInRole("Administrador"))
+                        @if (User.IsInRole("Operador"))
                         {
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                             
                                 <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
-                                <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
+                              
+                                <a href="#" onclick="showBarcodeModal(@item.CODIGOPRODUCTO)">Generar Código de Barras</a>
                             </td>
+                        }else{
+                        @if (User.IsInRole("Administrador"))
+                        {
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                                    <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a> |
+                                    <a href="#" onclick="showBarcodeModal(@item.CODIGOPRODUCTO)">Generar Código de Barras</a>
+                                </td>
                         }
                         else
                         {
@@ -131,7 +141,7 @@
                             </td>
                         }
 
-                    }
+                    }}
                 </tr>
             }
         </tbody>

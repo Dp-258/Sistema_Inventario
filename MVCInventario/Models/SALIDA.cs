@@ -23,10 +23,8 @@ namespace MVCInventario.Models
         [DataType(DataType.Date)]
         public DateTime FECHAREGISTROSALIDA { get; set; }
         [Display(Name = "Cantidad")]
-        [MaxLength(10, ErrorMessage = "Ingrese una cantidad de máximo 10 dígitos")]
         [Required(ErrorMessage = "Es necesario ingresar una cantidad")]
-        [RegularExpression(@"^\d+$", ErrorMessage = "Ingrese un número entero y positivo")]
-
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "Ingrese un número entero mayor a 0")]
         public int CANTIDADSALIDA { get; set; }
         [Display(Name = "Total")]
         [Column(TypeName = "decimal(38,2)")]

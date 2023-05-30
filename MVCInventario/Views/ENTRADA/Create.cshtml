@@ -46,7 +46,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Entrada.CANTIDADPENTRADA" class="control-label"></label>
-                <input asp-for="Entrada.CANTIDADPENTRADA" class="form-control" id="qntEn" onkeypress="return limitInputLength(event, this.value, 10)" type="number" />
+                <input asp-for="Entrada.CANTIDADPENTRADA" class="form-control" id="qntEn" onkeypress="return limitInputLength(event, this.value, 8)" type="number" />
                 <span asp-validation-for="Entrada.CANTIDADPENTRADA" class="text-danger"></span>
             </div>
             <!--<div class="form-group">

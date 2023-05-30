@@ -63,6 +63,10 @@ function validarCedula(cedula) {
                 }, 1000) % 10;
             return digito_calculado === digito_verificador;
         }
+    } else {
+        var erroresLbl = document.getElementById("erroreslbl");
+        erroresLbl.textContent = "La cédula es inválida.";
+        return false;
     }
     return false;
 }

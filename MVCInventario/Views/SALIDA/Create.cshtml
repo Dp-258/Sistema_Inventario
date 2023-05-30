@@ -49,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Salida.CANTIDADSALIDA" class="control-label"></label>
-                <input asp-for="Salida.CANTIDADSALIDA" class="form-control" id="qntSal" pattern="[0-9]{1,10}" />
+                <input asp-for="Salida.CANTIDADSALIDA" class="form-control" id="qntSal" onkeypress="return limitInputLength(event, this.value, 8)" type="number" />
                 <span asp-validation-for="Salida.CANTIDADSALIDA" class="text-danger"></span>
             </div>
             <!--<div class="form-group" hidden >
@@ -150,5 +150,13 @@
         input3.addEventListener('input', function () {
             localStorage.setItem('qntSal', input3.value);
         });
+    </script>
+    <script>
+        function limitInputLength(event, value, maxLength) {
+            if (value.length >= maxLength && event.keyCode !== 8 && event.keyCode !== 46) {
+                event.preventDefault();
+                return false;
+            }
+        }
     </script>
 }

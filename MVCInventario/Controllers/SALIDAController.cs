@@ -34,7 +34,7 @@ namespace MVCInventario.Controllers
             Document doc = new Document(iTextSharp.text.PageSize.Letter);
 
             doc.SetMargins(70.8661f, 70.8661f, 35.0394f, 35.0394f);
-            FileStream file = new FileStream("reporte_salida.pdf", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            MemoryStream file = new MemoryStream();
             PdfWriter writer = PdfWriter.GetInstance(doc, file);
 
             PageEventHelper eventHandler = new PageEventHelper();
@@ -50,11 +50,31 @@ namespace MVCInventario.Controllers
             BaseFont _subtitulo = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1252, true);
             iTextSharp.text.Font subtitulo = new iTextSharp.text.Font(_subtitulo, 14f, iTextSharp.text.Font.BOLD, new BaseColor(0, 0, 0));
 
-            BaseFont _parrafo = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1257, true);
-            iTextSharp.text.Font parrafo = new iTextSharp.text.Font(_parrafo, 12f, iTextSharp.text.Font.NORMAL, new BaseColor(0, 0, 0));
+            //BaseFont _parrafo = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1257, true);
+            //iTextSharp.text.Font parrafo = new iTextSharp.text.Font(_parrafo, 12f, iTextSharp.text.Font.NORMAL, new BaseColor(0, 0, 0));
+           
+            Font parrafo = FontFactory.GetFont("Courier", BaseFont.IDENTITY_H, BaseFont.EMBEDDED, 12);
+            if (fecha1 == null && fecha2 == null)
+            {
+                TempData["ErrorMessage"] = "No se puede generar el pdf, elija un rango de fechas en ambos calendarios";
+                // Retorna a la vista anterior
+                return RedirectToAction("Index");
+            }
+            else if (fecha1 == null)
+            {
+                TempData["ErrorMessage"] = "No se puede generar el pdf, elija un rango de fechas en ambos calendarios";
+                // Retorna a la vista anterior
+                return RedirectToAction("Index");
+            }
+            else if (fecha2 == null)
+            {
+                TempData["ErrorMessage"] = "No se puede generar el pdf, elija un rango de fechas en ambos calendarios";
+                // Retorna a la vista anterior
+                return RedirectToAction("Index");
+            }
 
-            BaseFont _blanco = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1250, true);
-            iTextSharp.text.Font blanco = new iTextSharp.text.Font(_parrafo, 10f, iTextSharp.text.Font.NORMAL, new BaseColor(255, 255, 255));
+            //BaseFont _blanco = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1250, true);
+            //iTextSharp.text.Font blanco = new iTextSharp.text.Font(_parrafo, 10f, iTextSharp.text.Font.NORMAL, new BaseColor(255, 255, 255));
 
 
 
@@ -87,7 +107,7 @@ namespace MVCInventario.Controllers
 
 
             //iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(Path.Combine());
-            var tbl = new PdfPTable(new float[] { 5f, 35f, 35f, 15f, 15f, 15f }) { WidthPercentage = 120 };
+            var tbl = new PdfPTable(new float[] { 10f, 30f, 32f, 17f, 16f, 15f }) { WidthPercentage = 120 };
 
             // Configurar estilo de las celdas
             var cellStyle = new PdfPCell(new Phrase()) { Padding = 5f, BackgroundColor = BaseColor.White }; cellStyle.BorderWidth = 0.5f;
@@ -230,7 +250,7 @@ namespace MVCInventario.Controllers
                         c5.BorderWidthLeft = 0.5f;  // Ajustar ancho del borde izquierdo
                         c5.BorderWidthRight = 0.5f;  // Ajustar ancho del borde derecho
                         c5.BorderWidthTop = 0.5f;  // Ajustar ancho del borde superior
-                        c5.PaddingLeft = 35f;
+             
                         c6 = new PdfPCell(new Phrase(salida.MONTOTOTALSALIDA.ToString(), parrafo));
                         c6.BorderWidthLeft = 0.5f;  // Ajustar ancho del borde izquierdo
                         c6.BorderWidthRight = 0.5f;  // Ajustar ancho del borde derecho
@@ -264,16 +284,19 @@ namespace MVCInventario.Controllers
                         tbl.AddCell(c6);
                         i++;
                     }
+                   
                 }
+
             }
 
             doc.Add(tbl);
 
             writer.Close();
-            file.Dispose();
-            var pdf = new FileStream("reporte_salida.pdf", FileMode.Open, FileAccess.Read);
+            doc.Close();
+            doc.Dispose();
 
-            return File(pdf, "application/pdf");
+
+            return File(file.ToArray(), "application/pdf");
         }
         public async Task<IActionResult> Index(SalidaViewModel model)
         {

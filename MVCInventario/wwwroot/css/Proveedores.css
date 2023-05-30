@@ -13,6 +13,7 @@
     text-decoration: none;
 }
 
+
     .hexagonpro:hover {
         background-color: #dce1e3;
     }
@@ -57,13 +58,14 @@
 }
 
 .tablepro {
-    width:100%;
+    width: 100%;
     border: 1px solid #ccc;
     border-collapse: collapse;
     margin: 0;
     padding: 0;
-    table-layout: fixed;
-}
+} 
+
+
 
     .tablepro caption {
         font-size: 28px;

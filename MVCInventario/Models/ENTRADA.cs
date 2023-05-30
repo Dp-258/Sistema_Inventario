@@ -23,9 +23,8 @@ namespace MVCInventario.Models
 
         [Display(Name = "Cantidad")]
         [Required(ErrorMessage = "Es necesario ingresar una cantidad")]
-      
-        [RegularExpression(@"^\d+$", ErrorMessage = "Ingrese un número entero y positivo")]
 
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "Ingrese un número entero mayor a 0")]
         public int CANTIDADPENTRADA { get; set; }
         [Display(Name = "Total")]
         //esto a 38

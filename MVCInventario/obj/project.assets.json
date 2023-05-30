@@ -11743,19 +11743,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\Daniel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+      "projectUniqueName": "C:\\MVC_inventario\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
       "projectName": "MVCInventario",
-      "projectPath": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\obj\\",
+      "projectPath": "C:\\MVC_inventario\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\MVCInventario.csproj",
+      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+      "outputPath": "C:\\MVC_inventario\\el_de_hoy\\segundo_avance\\Sistema_Inventario (2)\\Sistema_Inventario\\MVCInventario\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

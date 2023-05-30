@@ -161,14 +161,13 @@ namespace MVCInventario.Controllers
                     // Si hay un error, muestra una ventana emergente con el mensaje de error
                     TempData["ErrorMessage"] = "No se puede crear el producto, debido a que ya existe un producto con esta clave.";
                     // Retorna a la vista anterior
-                    return RedirectToAction("Create");
+                    return View(pRODUCTO);
                 }
 
 
             }
             return View(pRODUCTO);
         }
-
         // GET: PRODUCTO/Edit/5
         [Authorize(Roles = "Jefe, Operador, Administrador")]
         public async Task<IActionResult> Edit(int? id)

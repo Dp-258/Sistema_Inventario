@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="PVPPRODUCTO" class="control-label"></label>
-                <input asp-for="PVPPRODUCTO" class="form-control" />
+                <input asp-for="PVPPRODUCTO" class="form-control" onkeypress="return limitInputLength(event, this.value, 10) || validateInput(event)"  type="text" />
                 <span asp-validation-for="PVPPRODUCTO" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -78,6 +78,41 @@
         })
         reader.readAsDataURL(file);
     })
+</script>
+<script>
+    function validateInput(event) {
+        var keyCode = event.keyCode || event.which;
+        var keyValue = String.fromCharCode(keyCode);
+
+        // Permitir números, punto decimal y teclas especiales (tabulador, retroceso, eliminar)
+        if (!/[\d.]|\t|[\b]|[\x7F]/.test(keyValue)) {
+            event.preventDefault();
+            return false;
+        }
+
+        // Validar que no se ingrese más de un punto decimal
+        if (keyValue === "." && event.target.value.includes(".")) {
+            event.preventDefault();
+            return false;
+        }
+    }
+</script>
+<script>
+    function limitInputLength(event, value, maxLength) {
+        var decimalSeparator = ".";
+        var dotIndex = value.indexOf(decimalSeparator);
+
+        if (dotIndex >= 0) {
+            // Restringir si se alcanza el límite de dígitos enteros o decimales
+            if (dotIndex >= maxLength || value.substring(dotIndex + 1).length >= 2) {
+                event.preventDefault();
+                return false;
+            }
+        } else if (value.length >= maxLength) {
+            event.preventDefault();
+            return false;
+        }
+    }
 </script>
 @section Scripts {
     @{

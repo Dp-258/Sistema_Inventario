@@ -131,6 +131,22 @@
                 }
                 else
                 {
+                    @if (User.IsInRole("Operador"))
+                    {
+                        <td>
+                            @if (item.ANULARENTRADA == 0)
+                            {
+                                <i class="fas fa-check fa-lg" style="color: #22b940;"></i> <!-- Icono de visto -->
+                            }
+                            else
+                            {
+                                <i class="fas fa-times fa-lg" style="color: red;"></i> <!-- Icono de " x" -->
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.id">Detalles</a>
+                        </td>
+                    }else{
                     @if (User.IsInRole("Administrador"))
                     {
                         <td>
@@ -159,7 +175,7 @@
                         </td>
                     }
 
-                }
+                }}
             </tr>
         }
     </tbody>

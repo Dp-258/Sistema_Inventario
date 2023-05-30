@@ -27,7 +27,7 @@ namespace MVCInventario.Models
         public int STOCKPRODUCTO { get; set; }
 
         [Display(Name = "Precio")]
-        [RegularExpression(@"^\d+(.\d+)?$", ErrorMessage = "Ingrese un precio positivo y con dos decimales")]
+        [RegularExpression(@"^\d+(.\d+)?$", ErrorMessage = "Ingrese un precio que sea un número con dos decimales")]
         [Required(ErrorMessage = "Es necesario ingresar un precio")]
         public decimal PVPPRODUCTO { get; set; }
 
@@ -38,6 +38,7 @@ namespace MVCInventario.Models
         public string CATEGORIAPRODUCTO { get; set; }
 
         [Display(Name = "Imagen")]
+        [Required(ErrorMessage = "Es necesario ingresar una imagen")]
         public string FOTOPRODUCTO { get; set; }
 
     }
